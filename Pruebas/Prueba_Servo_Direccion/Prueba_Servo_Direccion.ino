@@ -3,8 +3,8 @@
 #define SERVO_PIN 13
 
 Servo miServo;
-int pos = 45;           
-int incremento = 1;     
+double pos = 45;           
+double incremento = 1;     
 
 void setup() {
   miServo.attach(SERVO_PIN);
@@ -26,4 +26,6 @@ void loop() {
     pos = 45;
     incremento = 1;   
   }
+
+  delay(100);
 }
