@@ -10,9 +10,9 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 
 ## Meet the team !!
 
-![Ejemplo de diagrama]([https://example.com/diagrama.png](https://i.pinimg.com/736x/ca/a3/46/caa34620e6a10a8fb84104bc66d4afc2.jpg))
+![Placeholder](images/Team_Placeholder.png)
 
-|  |  |  |
+|![Placeholder](images/ale_holder.png)  |![Placeholder](images/jorge_holder.png)  |![Placeholder](images/yumi_holder.png)  |
 |-----------|-----------|-----------|
 | Alejandro Pineda   | Jorge Ibarra    | Yumián Rodríguez    |
 | Electronic Cybernetics Engineering    | Computer Science Engineering    | Electronic Cybernetics Engineering    |
