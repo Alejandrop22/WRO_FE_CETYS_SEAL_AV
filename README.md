@@ -20,6 +20,26 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 | Electronic Cybernetics Engineering    | Computer Science Engineering    | Electronic Cybernetics Engineering    |
 | Descript    | Descript    | Descript    |
 
+
+### **📁 Documentation Evaluation Framework**
+
+<div align="center">
+
+## 📊 **WRO 2025 Engineering Documentation Scoring (30 points total)**
+
+| Scoring Area | Maximum Points | Our Documentation Coverage |
+|--------------|----------------|---------------------------|
+| **1. Mobility Management** | 4 points | Complete mechanical design, motor selection, steering system, assembly instructions |
+| **2. Power & Sense Management** | 4 points | Power systems, sensor integration, wiring diagrams, component specifications |
+| **3. Obstacle Management** | 4 points | Navigation algorithms, parking strategies, source code with detailed comments |
+| **4. Pictures – Team and Vehicle** | 4 points | Multi-angle vehicle photos, team photos, component labeling |
+| **5. Performance Videos** | 4 points | Complete challenge demonstrations with commentary and analysis |
+| **6. GitHub Utilization** | 4 points | Version control, structured documentation, regular commits |
+| **7. Engineering Factor** | 4 points | Custom design and manufacturing throughout the vehicle |
+| **8. Overall Judge Impression** | 2 points | Clear communication enabling easy replication |
+| **Total Documentation Score** | **30 points** | **(≈25% of total competition score)** |
+</div>
+
 ## Robot Overview
 S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
@@ -87,4 +107,8 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 |-----------|-----------|
 
 ## Coding and Sensors
+
+El control es la parte mas importante de este proyecto, estamos usando un sistema con doble control cada uno independiente de el otro. El primero es un pid que  
+
+
 
