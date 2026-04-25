@@ -52,15 +52,17 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - Rear Wheel Drive
 
-|(images/motor_sideview.jpg) 
-<img width="800" height="1200" alt="motor_underview" src="https://github.com/user-attachments/assets/17e30f8e-fe47-426e-9e7d-5320d4492e8b" />
+|![Placeholder](images/motor_frontview.jpeg) 
+![Placeholder](images/motor_underview.jpeg) 
+![Placeholder](images/motor_sideview.jpeg) 
+
 
 | Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. | 
 |-----------|-----------|
 
 - Servo Motor Ackerman Steering
 
-| <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/195ab54d-7af2-42ae-b4ed-fc2bcb3fd079" />
+|![Placeholder](images/servo.jpeg) 
  | Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners. | 
 |-----------|-----------|
 
