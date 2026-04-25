@@ -52,7 +52,7 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - Rear Wheel Drive
 
-|![Placeholder](images/motor_frontview.jpeg) 
+|![Placeholder](images/motor_frontview.jpeg/100x150) 
 ![Placeholder](images/motor_underview.jpeg) 
 ![Placeholder](images/motor_sideview.jpeg) 
 
