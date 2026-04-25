@@ -53,9 +53,7 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 - Rear Wheel Drive
 
 |![Placeholder](images/motor_frontview.jpeg) 
-|
 ![Placeholder](images/motor_underview.jpeg) 
-|
 ![Placeholder](images/motor_sideview.jpeg) 
 
 
@@ -70,7 +68,7 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - Modular Double Decker Chasis
 
-| <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/f076f8ea-0520-443b-917b-dd9a76d0880f" />
+|![Placeholder](images/doubledecker.jpeg) 
  | We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
 |-----------|-----------|
 
@@ -80,10 +78,10 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 | Component | Model | Quantity | Usage |
 |-----------|-----------|-----------|-----------|
-| photo    | Lipo Rider Plus    | 1 | Power Distribution |
-| photo    | Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
-| photo    | ESP32    | 1 | Motor |
-| photo    | ESP32 Shield    | 1 | Power Distribution |
+| ![Placeholder](images/LipoRiderPlus.jpeg)     | Lipo Rider Plus    | 1 | Power Distribution |
+| ![Placeholder](images/servo.jpeg)     | Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
+| ![Placeholder](images/ESP32.jpeg)     | ESP32    | 1 | Motor |
+| ![Placeholder](images/ESP32shield.jpeg)     | ESP32 Shield    | 1 | Power Distribution |
 
 - IMU
 
