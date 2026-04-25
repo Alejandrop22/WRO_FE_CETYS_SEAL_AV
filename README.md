@@ -52,7 +52,7 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - Rear Wheel Drive
   
-| <img width="200" height="300" alt="motor_frontview" src="https://github.com/user-attachments/assets/417764c1-f9d4-4c95-8530-00304cb9c319" /> | Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. |
+| <img width="250" height="350" alt="motor_frontview" src="https://github.com/user-attachments/assets/417764c1-f9d4-4c95-8530-00304cb9c319" /> | Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. |
 |-----------|-----------|
 
 - Servo Motor Ackerman Steering
@@ -62,7 +62,7 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - Modular Double Decker Chasis
 
-|<img width="500" height="800" alt="doubledecker" src="https://github.com/user-attachments/assets/7dd58118-e45a-4dce-a07c-2d63caec1027" />| We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
+|<img width="570" height="800" alt="doubledecker" src="https://github.com/user-attachments/assets/7dd58118-e45a-4dce-a07c-2d63caec1027" />| We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
 |-----------|-----------|
 
 ## Electronic Systems
