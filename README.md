@@ -63,39 +63,32 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 
 - IMU
 
-| Photo | Our IMU(Inertial Measurement Unit), with the use of a sensor, meassures the aceleration of the component. Depending on the I2C protocol, we get the values of 6 acelerations, x y z and angular x y z. With these values and various other algorithms we can calculate the yaw. |
+| Photo | Our IMU(Inertial Measurement Unit) MPU6050, with the use of a sensor, meassures the aceleration of the component. Depending on the I2C protocol, we get the values of 6 acelerations, x y z and angular x y z. With these values and various other algorithms we can calculate the yaw that helps our robot stay centered while turning. |
 |-----------|-----------|
 
 - H bridge
 
-| Photo | asdasdasd | 
+| Photo | We take 5V power directly form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays constantly high for the straight sections of the route, when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
 |-----------|-----------|
 
 - ESP Shield
 
-| Photo | asdasdasd | 
+| Photo | Our ESP32 shield allows us to connect all of our components for the ESP32 to control them, thanks to this, we are also able to send 5V power to our IMU directly for the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is helping us a lot. | 
 |-----------|-----------|
 
 - Lipo Rider and Power Supply
 
-| Photo | asdasdasd | 
+| Photo | We connect our 3.7V lipo to the Lipo Rider Plus, and use it to power our ESP Shield, through 5V USB A to USB C, and our H Bridge, though 5V and GND pins. We can use the battery for around 2 hours before it need to charge, which takes around half an hour from empty to full. We are looking into getting a double cell 7.4V battery which also has more than 1500 mAh. | 
 |-----------|-----------|
 
 - Time of Flight Sensors
 
-| Photo | asdasdasd | 
+| Photo | The sensors emit infrared light beams, which helps us read the distance from the robot to the left and right wall. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, add a delay of 100ms beetween each initialization.** | 
 |-----------|-----------|
 
-## Coding and electronica
+## Code and Sensing Logic
 
-Electronics
-
-Estamos utilizando una esp 32 base y esta tiene un problema muy grande que no conociamos, al intentar generar la señal pwm del motor y del servo a la vez. La esp32 hacía Brownout entonces creímos que era fallo de nuestro puente H o de nuestra alimentación. Pero este problema resultó estar en código.
-
-Actualmente contamos con 2 sensores distintos, tenemos el mpu 5060 y el vl53l0xv2 conectados en el mismo canal de I2C, el único problema es que al contar con vl53l0xv2 estos tienen la misma dirección, entonces lo que se tiene que hacer es utilizar el pin XSHUT de cada sensor para asignarle una dirección distinta y poder leer ambos durante el código. **Cuidado al iniciar los sensores, tiene que estar el otro XSHUT en low al iniciar y tiene que haber un delay de aproximadamente 100ms entre la inicialización de ambos para que funcione**
-
-
-C0ding
+Coding
 
 
 Al iniciar nuestro código empieza un ciclo de calibración donde hace 2000 lecturas de nuestra imu con el algoritmo de SensorFusion de xioTecnologies, de esta manera guardamos la media de diferencia a los 180 grados de las lecturas y lo colocamos como un offset en los 6 ejes, la aceleración en el eje x y y z y la aceleración angular en el eje x y y z.
