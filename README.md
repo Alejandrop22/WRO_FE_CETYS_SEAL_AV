@@ -101,30 +101,35 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 | Photo | asdasdasd | 
 |-----------|-----------|
 
-## Coding and Sensors
+## Coding and electronica
 
-Sensors
+Electronics
 
-Actualmente contamos con 2 sensores distintos, tenemos el mpu 5060 y el vl53l0xv2 conectados en el mismo canal de I2C, el único problema es que al contar con vl53l0xv2 estos tienen la misma dirección entonces lo que se tiene que hacer es utilizar el pin XSHUT de cada sensor para asignarle una dirección distinta y poder leer ambas durante el código. **Cuidado al iniciar los sensores, tiene que estar el otro XSHUT en low al iniciar y tiene que haber un delay de aproximadamente 100ms entre la inicialización de ambos para que funcione**
+Estamos utilizando una esp 32 base y esta tiene un problema muy grande que no conociamos, al intentar generar la señal pwm del motor y del servo a la vez. La esp32 hacía Brownout entonces creímos que era fallo de nuestro puente H o de nuestra alimentación. Pero este problema resultó estar en código.
+
+Actualmente contamos con 2 sensores distintos, tenemos el mpu 5060 y el vl53l0xv2 conectados en el mismo canal de I2C, el único problema es que al contar con vl53l0xv2 estos tienen la misma dirección, entonces lo que se tiene que hacer es utilizar el pin XSHUT de cada sensor para asignarle una dirección distinta y poder leer ambos durante el código. **Cuidado al iniciar los sensores, tiene que estar el otro XSHUT en low al iniciar y tiene que haber un delay de aproximadamente 100ms entre la inicialización de ambos para que funcione**
 
 
 C0ding
 
+
 Al iniciar nuestro código empieza un ciclo de calibración donde hace 2000 lecturas de nuestra imu con el algoritmo de SensorFusion de xioTecnologies, de esta manera guardamos la media de diferencia a los 180 grados de las lecturas y lo colocamos como un offset en los 6 ejes, la aceleración en el eje x y y z y la aceleración angular en el eje x y y z.
+
+Después empezamos el movimiento del motor. Este nos causo algunos problemas durante el desarrollo de este robot porque no se pueden generar 2 señales pwm por el mismo canal interno de la esp32, es por eso que cuando queremos mover el motor lo hacemos con "analogWrite" y cuando queremos mover el servo lo hacemos con "ledcWrite" Esta fue nuestra solución y se las recomendamos.  
 
 El control es la parte más importante de este proyecto; estamos usando un sistema con doble control, cada uno independiente del otro.
 
-Después empezamos el movimiento del motor y el control del servo. Este está dividido en dos, el 50% del error depende de la diferencia del ángulo actual al ángulo target y el otro 50% de la diferencia de la distancia de los sensores de time to flight a la pared, el target es 0 y se mide de la diferencia del doble de una lectura menos la otra, esto hace que el robot se sitúe al 33% de la pared. Esto se hace en la segunda vuelta cuando ya se sabe hacia dónde va a avanzar. En el inicio se acomoda en la mitad.
+El control del servo. Este está dividido en dos, el 50% del error depende de la diferencia del ángulo actual al ángulo target y el otro 50% de la diferencia de la distancia de los sensores de time to flight a la pared, el target es 0 y se mide de la diferencia del doble de una lectura menos la otra, esto hace que el robot se sitúe al 33% de la pared. Esto se hace en la segunda vuelta cuando ya se sabe hacia dónde va a avanzar. Al inicio, se acomoda en la mitad.
 
 Flujo del PID
 
 <img width="420" height="500" alt="image" src="https://github.com/user-attachments/assets/dc7ae5a2-db3e-4662-b6e9-9c0b4839a278" />
 
 
-Durante el control de el robot tenemos una condicion que es girando, entocnes si la lectura de el sensor de distancia a los lados lee mas de 50 centimetros de distancia detecta como una esquina y la condicion se convierte en true, y gira hacia el lado de detecte el sensor. El giro se realiza hasta que el angulo de la lectura de la imu sea igual a +- 90. y se aguega un 1 a el contador de giros.
+Durante el control del robot tenemos una condición que es girando, entonces si la lectura del sensor de distancia a los lados lee más de 50 centímetros de distancia detecta como una esquina y la condición se convierte en true, y gira hacia el lado de detecte el sensor. El giro se realiza hasta que el ángulo de la lectura de la imu sea igual a +- 90. y se agrega un 1 al contador de giros.
 
 
-el codigo termina cuando el contador de giros es igual a 90.
+El código termina cuando el contador de giros es igual a 16.
 
 
 
