@@ -52,11 +52,7 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - Rear Wheel Drive
 
-|![Placeholder](images/motor_frontview.jpeg) 
-![Placeholder](images/motor_underview.jpeg) 
-![Placeholder](images/motor_sideview.jpeg) 
-
-
+|
 | Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. | 
 |-----------|-----------|
 
