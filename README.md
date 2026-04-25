@@ -57,14 +57,12 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - Servo Motor Ackerman Steering
 
-|![Placeholder](images/servo.jpeg) 
- | Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners. | 
+|<img width="200" height="300" alt="servo" src="https://github.com/user-attachments/assets/4aa42ded-26b2-4716-ae23-06af04561040" />| Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners. | 
 |-----------|-----------|
 
 - Modular Double Decker Chasis
 
-|![Placeholder](images/doubledecker.jpeg) 
- | We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
+|<img width="200" height="300" alt="doubledecker" src="https://github.com/user-attachments/assets/7dd58118-e45a-4dce-a07c-2d63caec1027" />| We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
 |-----------|-----------|
 
 ## Electronic Systems
