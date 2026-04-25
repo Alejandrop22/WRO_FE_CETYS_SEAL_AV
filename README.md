@@ -17,28 +17,9 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 |![Placeholder](images/ale_holder.png)  |![Placeholder](images/jorge_holder.png)  |![Placeholder](images/yumi_holder.png)  |
 |-----------|-----------|-----------|
 | Alejandro Pineda   | Jorge Ibarra    | Yumián Rodríguez    |
-| Electronic Cybernetics Engineering    | Computer Science Engineering    | Electronic Cybernetics Engineering    |
-| Descript    | Descript    | Descript    |
+| Studying: Electronic Cybernetics Engineering    | Studying:  Computer Science Engineering    | Studying: Electronic Cybernetics Engineering    |
+| Excited to obtain a good placement in the 2026 Future Engineers season.  | Wants to travel to an international championship.  | Ready to work on the prototype day and night. |
 
-
-### **📁 Documentation Evaluation Framework**
-
-<div align="center">
-
-## 📊 **WRO 2025 Engineering Documentation Scoring (30 points total)**
-
-| Scoring Area | Maximum Points | Our Documentation Coverage |
-|--------------|----------------|---------------------------|
-| **1. Mobility Management** | 4 points | Complete mechanical design, motor selection, steering system, assembly instructions |
-| **2. Power & Sense Management** | 4 points | Power systems, sensor integration, wiring diagrams, component specifications |
-| **3. Obstacle Management** | 4 points | Navigation algorithms, parking strategies, source code with detailed comments |
-| **4. Pictures – Team and Vehicle** | 4 points | Multi-angle vehicle photos, team photos, component labeling |
-| **5. Performance Videos** | 4 points | Complete challenge demonstrations with commentary and analysis |
-| **6. GitHub Utilization** | 4 points | Version control, structured documentation, regular commits |
-| **7. Engineering Factor** | 4 points | Custom design and manufacturing throughout the vehicle |
-| **8. Overall Judge Impression** | 2 points | Clear communication enabling easy replication |
-| **Total Documentation Score** | **30 points** | **(≈25% of total competition score)** |
-</div>
 
 ## Robot Overview
 S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35kg
@@ -46,7 +27,6 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
 | photo    | photo    | photo
- |
 
 ## Mechanical Systems
 
@@ -75,6 +55,11 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 |<img width="200" height="200" alt="LipoBattery" src="https://github.com/user-attachments/assets/f3547633-941e-4afc-8189-2a754e9a692d" />| Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
 | <img width="200" height="200" alt="ESP32" src="https://github.com/user-attachments/assets/4749645a-bd57-4d26-9eb0-98450272df4a" />| ESP32    | 1 | Motor |
 |<img width="200" height="200" alt="ESP32shield" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| ESP32 Shield    | 1 | Power Distribution |
+|<img width="200" height="200" alt="IMU" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| IMU mpu6050    | 1 | Orientation and Acceleration |
+|<img width="200" height="200" alt="TOFSensor" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| Time of Flight Sensor VL53L0X    | 2 | Wall Sensing |
+|<img width="200" height="200" alt="H bridge" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| H Bridge DR8833    | 1 | DC Motor Control |
+|<img width="200" height="200" alt="DC Motor" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| DC Reduction Motor    | 1 | Movement |
+|<img width="200" height="200" alt="Servo" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| Steering Servo    | 1 | Steering Direction Control |
 
 - IMU
 
