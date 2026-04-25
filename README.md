@@ -41,7 +41,7 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 </div>
 
 ## Robot Overview
-S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
+S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35kg
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
