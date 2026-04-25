@@ -62,7 +62,7 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - Modular Double Decker Chasis
 
-|<img width="400" height="500" alt="doubledecker" src="https://github.com/user-attachments/assets/7dd58118-e45a-4dce-a07c-2d63caec1027" />| We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
+|<img width="500" height="800" alt="doubledecker" src="https://github.com/user-attachments/assets/7dd58118-e45a-4dce-a07c-2d63caec1027" />| We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
 |-----------|-----------|
 
 ## Electronic Systems
@@ -71,10 +71,10 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 | Component | Model | Quantity | Usage |
 |-----------|-----------|-----------|-----------|
-| ![Placeholder](images/LipoRiderPlus.jpeg)     | Lipo Rider Plus    | 1 | Power Distribution |
-| ![Placeholder](images/servo.jpeg)     | Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
-| ![Placeholder](images/ESP32.jpeg)     | ESP32    | 1 | Motor |
-| ![Placeholder](images/ESP32shield.jpeg)     | ESP32 Shield    | 1 | Power Distribution |
+| <img width="200" height="200" alt="LipoRiderPlus" src="https://github.com/user-attachments/assets/d6076567-2f07-48d6-8f42-599e3acb56a0" />| Lipo Rider Plus    | 1 | Power Distribution |
+|<img width="200" height="200" alt="LipoBattery" src="https://github.com/user-attachments/assets/f3547633-941e-4afc-8189-2a754e9a692d" />| Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
+| <img width="200" height="200" alt="ESP32" src="https://github.com/user-attachments/assets/4749645a-bd57-4d26-9eb0-98450272df4a" />| ESP32    | 1 | Motor |
+|<img width="200" height="200" alt="ESP32shield" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| ESP32 Shield    | 1 | Power Distribution |
 
 - IMU
 
