@@ -6,7 +6,9 @@ Systems Engineering Autonomous Labs     S.E.A.L
 
 We are a team made up of 3 first-year engineering students from Mexicali, Baja California, México, excited to participate in Future Engineers for the first time! Our robot, Seal, aims to complete the 2026 future engineers challenges, we look forward to upgrading our prototypes while sharing our journey along the way.
 
-Read our Build-Blog !! We document every day of our journey, including our challenges and how we overcame them.
+Read our Build-Blog !! We document every day of our journey, including our challenges and how we overcame them.      
+
+~ Build start date: Monday April 20th, 2026
 
 ## Meet the team !!
 
@@ -18,9 +20,25 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 | Electronic Cybernetics Engineering    | Computer Science Engineering    | Electronic Cybernetics Engineering    |
 | Descript    | Descript    | Descript    |
 
-- Informe Mecánico
-* Sistema de Potencia
-*  Sistema de Sensado
-*  Evasión de Obstáculos
-- Informe Electrónico
-* 
+## Robot Overview
+S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
+
+| Top View | Front View | Side View | 
+|-----------|-----------|-----------|
+| photo    | photo    | photo |
+
+## Mechanical Systems
+
+- Rear Wheel Drive
+Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter.
+
+- Servo Motor Ackerman Steering
+Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners.
+
+- Modular Double Decker Chasis
+We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics.
+
+## Electronic Systems
+
+## Coding and Sensors
+
