@@ -112,7 +112,7 @@ Al iniciar nuestro codigo empieza un ciclo de calibracion donde hace 2000 lectur
 
 despues empezamos el movimiento de el motor y el control de el servo.
 
-<img width="1440" height="1720" alt="image" src="https://github.com/user-attachments/assets/dc7ae5a2-db3e-4662-b6e9-9c0b4839a278" />
+<img width="420" height="500" alt="image" src="https://github.com/user-attachments/assets/dc7ae5a2-db3e-4662-b6e9-9c0b4839a278" />
 
 
 El control es la parte mas importante de este proyecto, estamos usando un sistema con doble control cada uno independiente de el otro. El primero es un pid que  
