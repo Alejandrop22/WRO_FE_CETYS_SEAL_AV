@@ -108,14 +108,24 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 ## Coding and Sensors
 
-Al iniciar nuestro codigo empieza un ciclo de calibracion donde hace 2000 lecturas de nuestra imu con el algoritmo de SensorFusion de xioTecnologies, de esta manera guardamos la media de diferencia a los 180 grados de las lecturas y lo colocamos como un offset en los 6 ejes, la aceleracion en el eje x y y z y la aceleracion angular en el eje x y y z.
+Al iniciar nuestro código empieza un ciclo de calibración donde hace 2000 lecturas de nuestra imu con el algoritmo de SensorFusion de xioTecnologies, de esta manera guardamos la media de diferencia a los 180 grados de las lecturas y lo colocamos como un offset en los 6 ejes, la aceleración en el eje x y y z y la aceleración angular en el eje x y y z.
 
-despues empezamos el movimiento de el motor y el control de el servo.
+El control es la parte más importante de este proyecto; estamos usando un sistema con doble control, cada uno independiente del otro.
+
+Después empezamos el movimiento del motor y el control del servo. Este está dividido en dos, el 50% del error depende de la diferencia del ángulo actual al ángulo target y el otro 50% de la diferencia de la distancia de los sensores de time to flight a la pared, el target es 0 y se mide de la diferencia del doble de una lectura menos la otra, esto hace que el robot se sitúe al 33% de la pared. Esto se hace en la segunda vuelta cuando ya se sabe hacia dónde va a avanzar. En el inicio se acomoda en la mitad.
+
+Flujo del PID
 
 <img width="420" height="500" alt="image" src="https://github.com/user-attachments/assets/dc7ae5a2-db3e-4662-b6e9-9c0b4839a278" />
 
 
-El control es la parte mas importante de este proyecto, estamos usando un sistema con doble control cada uno independiente de el otro. El primero es un pid que  
+Durante el control de el robot tenemos una condicion que es girando, entocnes si la lectura de el sensor de distancia a los lados lee mas de 50 centimetros de distancia detecta como una esquina y la condicion se convierte en true, y gira hacia el lado de detecte el sensor. El giro se realiza hasta que el angulo de la lectura de la imu sea igual a +- 90. y se aguega un 1 a el contador de giros.
+
+
+el codigo termina cuando el contador de giros es igual a 90.
+
+
+
 
 
 
