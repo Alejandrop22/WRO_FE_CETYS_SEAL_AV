@@ -30,15 +30,55 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 ## Mechanical Systems
 
 - Rear Wheel Drive
-Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter.
+
+| Photo | Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. | 
+|-----------|-----------|
 
 - Servo Motor Ackerman Steering
-Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners.
+
+| Photo | Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners. | 
+|-----------|-----------|
 
 - Modular Double Decker Chasis
-We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics.
+
+| Photo | We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
+|-----------|-----------|
 
 ## Electronic Systems
+
+- Components used
+
+| Component | Model | Quantity | Usage |
+|-----------|-----------|-----------|-----------|
+| photo    | Lipo Rider Plus    | 1 | Power Distribution |
+| photo    | Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
+| photo    | ESP32    | 1 | Motor |
+| photo    | ESP32 Shield    | 1 | Power Distribution |
+
+- IMU
+
+| Photo | asdasdasd | 
+|-----------|-----------|
+
+- H bridge
+
+| Photo | asdasdasd | 
+|-----------|-----------|
+
+- ESP Shield
+
+| Photo | asdasdasd | 
+|-----------|-----------|
+
+- Lipo Rider and Power Supply
+
+| Photo | asdasdasd | 
+|-----------|-----------|
+
+- Time of Flight Sensors
+
+| Photo | asdasdasd | 
+|-----------|-----------|
 
 ## Coding and Sensors
 
