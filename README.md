@@ -78,7 +78,7 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 - IMU
 
-| Photo | asdasdasd | 
+| Photo | Our IMU(Inertial Measurement Unit), with the use of a sensor, meassures the aceleration of the component. Depending on the I2C protocol, we get the values of 6 acelerations, x y z and angular x y z. With these values and various other algorithms we can calculate the yaw. |
 |-----------|-----------|
 
 - H bridge
