@@ -25,23 +25,29 @@ S.E.A.L.   Dimensions:  cm x  cm x  cm     Weight:
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
-| photo    | photo    | photo |
+| photo    | photo    | <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/7f3ef13a-f18b-4f83-9ef7-0a0c5c95ae70" />
+ |
 
 ## Mechanical Systems
 
 - Rear Wheel Drive
 
-| Photo | Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. | 
+| <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/7c24e742-cafe-42bb-a44d-a0ef0434fde4" />
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/5ab27811-80f1-4edf-9b43-8c9605c86aa4" />
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/4c346863-5768-432a-8866-29232321e210" />
+| Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. | 
 |-----------|-----------|
 
 - Servo Motor Ackerman Steering
 
-| Photo | Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners. | 
+| <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/195ab54d-7af2-42ae-b4ed-fc2bcb3fd079" />
+ | Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners. | 
 |-----------|-----------|
 
 - Modular Double Decker Chasis
 
-| Photo | We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
+| <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/f076f8ea-0520-443b-917b-dd9a76d0880f" />
+ | We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
 |-----------|-----------|
 
 ## Electronic Systems
