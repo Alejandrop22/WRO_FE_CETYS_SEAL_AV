@@ -12,9 +12,9 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 
 ## Meet the team !!
 
-![Placeholder](images/Team_Placeholder.png)
+![Placeholder](images/)
 
-|![Placeholder](images/ale_holder.png)  |![Placeholder](images/jorge_holder.png)  |![Placeholder](images/yumi_holder.png)  |
+|![Placeholder](images/)  |![Placeholder](images/)  |![Placeholder](images/)  |
 |-----------|-----------|-----------|
 | Alejandro Pineda   | Jorge Ibarra    | Yumián Rodríguez    |
 | Studying: Electronic Cybernetics Engineering    | Studying:  Computer Science Engineering    | Studying: Electronic Cybernetics Engineering    |
@@ -26,7 +26,7 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
-| photo    | photo    | photo
+| ![Placeholder](images/)    | ![Placeholder](images/)    | ![Placeholder](images/)
 
 ## Mechanical Systems
 
@@ -63,27 +63,27 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 
 - IMU
 
-| Photo | Our IMU(Inertial Measurement Unit) MPU6050, with the use of a sensor, meassures the aceleration of the component. Depending on the I2C protocol, we get the values of 6 acelerations, x y z and angular x y z. With these values and various other algorithms we can calculate the yaw that helps our robot stay centered while turning. |
+| ![Placeholder](images/) | Our IMU(Inertial Measurement Unit) MPU6050, with the use of a sensor, meassures the aceleration of the component. Depending on the I2C protocol, we get the values of 6 acelerations, x y z and angular x y z. With these values and various other algorithms we can calculate the yaw that helps our robot stay centered while turning. |
 |-----------|-----------|
 
 - H bridge
 
-| Photo | We take 5V power directly form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays constantly high for the straight sections of the route, when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
+| ![Placeholder](images/) | We take 5V power directly form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays constantly high for the straight sections of the route, when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
 |-----------|-----------|
 
 - ESP Shield
 
-| Photo | Our ESP32 shield allows us to connect all of our components for the ESP32 to control them, thanks to this, we are also able to send 5V power to our IMU directly for the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is helping us a lot. | 
+| ![Placeholder](images/) | Our ESP32 shield allows us to connect all of our components for the ESP32 to control them, thanks to this, we are also able to send 5V power to our IMU directly for the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is helping us a lot. | 
 |-----------|-----------|
 
 - Lipo Rider and Power Supply
 
-| Photo | We connect our 3.7V lipo to the Lipo Rider Plus, and use it to power our ESP Shield, through 5V USB A to USB C, and our H Bridge, though 5V and GND pins. We can use the battery for around 2 hours before it need to charge, which takes around half an hour from empty to full. We are looking into getting a double cell 7.4V battery which also has more than 1500 mAh. | 
+| ![Placeholder](images/) | We connect our 3.7V lipo to the Lipo Rider Plus, and use it to power our ESP Shield, through 5V USB A to USB C, and our H Bridge, though 5V and GND pins. We can use the battery for around 2 hours before it need to charge, which takes around half an hour from empty to full. We are looking into getting a double cell 7.4V battery which also has more than 1500 mAh. | 
 |-----------|-----------|
 
 - Time of Flight Sensors
 
-| Photo | The sensors emit infrared light beams, which helps us read the distance from the robot to the left and right wall. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, add a delay of 100ms beetween each initialization.** | 
+| ![Placeholder](images/) | The sensors emit infrared light beams, which helps us read the distance from the robot to the left and right wall. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, add a delay of 100ms beetween each initialization.** | 
 |-----------|-----------|
 
 ## Code and Sensing Logic
