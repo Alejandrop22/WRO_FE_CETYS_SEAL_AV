@@ -1,0 +1,378 @@
+#include <Wire.h>
+#include <MPU6050.h>
+#include <SensorFusion.h>
+#include <Adafruit_VL53L0X.h>
+
+// ========== MOTOR ==========
+#define MOTOR_DIR_PIN  2
+#define MOTOR_PWM_PIN  4
+
+// ========== SERVO ==========
+#define SERVO_PIN       13
+const int SERVO_DUTY_MIN = 13;
+const int SERVO_DUTY_MAX = 26;
+const int SERVO_CENTRO   = 90;
+
+// ========== SENSORES ==========
+#define XSHUT_S1 17    // derecho  × 1
+#define XSHUT_S2 16    // izquierdo × 2
+#define ADDR_S1  0x30
+#define ADDR_S2  0x31
+Adafruit_VL53L0X sensor1, sensor2;
+bool     s1_ok = false, s2_ok = false;
+uint16_t dist_der = 9999;   // S1 derecho
+uint16_t dist_izq = 9999;   // S2 izquierdo
+
+// ========== UMBRAL ESQUINA ==========
+const uint16_t DISTANCIA_GIRO_MM = 1000;   // mm — pierde pared = esquina
+
+// ========== DIRECCIÓN DE GIRO ==========
+// 0 = no definida aún
+// 1 = gira a la derecha (S1 detectó esquina primero)
+// 2 = gira a la izquierda (S2 detectó esquina primero)
+uint8_t dirGiro = 0;
+
+// ========== COOLDOWN ==========
+const unsigned long COOLDOWN_GIRO_MS = 2000;
+unsigned long tUltimoGiro = 0;
+
+// ========== MPU6050 ==========
+MPU6050 mpu;
+SF fusion;
+float ax_offset=0, ay_offset=0, az_offset=0;
+float gx_offset=0, gy_offset=0, gz_offset=0;
+float deltat, yaw;
+float targetYaw = 0.0f;
+const int Led_calib     = 12;
+const int calibraciones = 2000;
+
+// ========== PID IMU ==========
+float kp_yaw = 2.0f;
+float ki_yaw = 0.001f;
+float kd_yaw = 0.3f;
+float integral_yaw  = 0.0f;
+float prevError_yaw = 0.0f;
+const float integralLimit_yaw = 40.0f;
+
+// ========== PID POSICIÓN (error de dos sensores) ==========
+// error = (2×izq) - (1×der)  →  0 cuando robot al 33% del lado izquierdo
+// o     = (2×der) - (1×izq)  →  0 cuando robot al 33% del lado derecho
+// dependiendo de dirGiro
+float kp_pos = 0.08f;
+float ki_pos = 0.0005f;
+float kd_pos = 0.5f;
+float integral_pos  = 0.0f;
+float prevError_pos = 0.0f;
+const float integralLimit_pos = 60.0f;
+
+// Pesos de mezcla
+float mixYaw = 0.3f;
+float mixPos = 0.7f;
+
+// Límite corrección total
+const float CORRECCION_MAX = 35.0f;
+
+// ========== ESTADO ==========
+uint8_t       giroCount  = 0;
+bool          detenido   = false;
+const unsigned long TIMEOUT_GIRO_MS = 4000;
+
+// ========== PRINT ==========
+const int PRINT_EVERY_N = 5;
+int printCounter = 0;
+
+// ========== PROTOTIPOS ==========
+void  calibrarIMU();
+void  leerIMU();
+bool  leerSensores();
+float calcularError();
+void  girar();
+int   servoAngleToDuty(int angle);
+float normYaw(float e);
+
+// ============================================================
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(21, 22);
+
+  // Motor apagado
+  pinMode(MOTOR_DIR_PIN, OUTPUT);
+  digitalWrite(MOTOR_DIR_PIN, LOW);
+  ledcAttach(MOTOR_PWM_PIN, 5000, 8);
+  ledcWrite(MOTOR_PWM_PIN, 0);
+
+  // Servo al centro
+  ledcAttach(SERVO_PIN, 50, 8);
+  ledcWrite(SERVO_PIN, servoAngleToDuty(SERVO_CENTRO));
+
+  // S1 derecho
+  pinMode(XSHUT_S1, OUTPUT);
+  pinMode(XSHUT_S2, OUTPUT);
+  digitalWrite(XSHUT_S1, LOW);
+  digitalWrite(XSHUT_S2, LOW);
+  delay(20);
+
+  digitalWrite(XSHUT_S1, HIGH); delay(50);
+  s1_ok = sensor1.begin(ADDR_S1, false, &Wire);
+  Serial.println(s1_ok ? "S1 derecho OK" : "ERROR S1");
+
+  digitalWrite(XSHUT_S2, HIGH); delay(50);
+  s2_ok = sensor2.begin(ADDR_S2, false, &Wire);
+  Serial.println(s2_ok ? "S2 izquierdo OK" : "ERROR S2");
+
+  // MPU6050
+  pinMode(Led_calib, OUTPUT);
+  digitalWrite(Led_calib, HIGH);
+  mpu.initialize();
+  if (!mpu.testConnection()) {
+    Serial.println("ERROR: MPU6050");
+    while (1);
+  }
+  Serial.println("Calibrando IMU... NO MUEVAS");
+  calibrarIMU();
+
+  // Calentar filtro
+  Serial.println("Estabilizando filtro...");
+  for (int i = 0; i < 300; i++) {
+    leerIMU();
+    delay(5);
+  }
+
+  targetYaw = fusion.getYaw();
+  Serial.print("Target Yaw: "); Serial.println(targetYaw, 2);
+
+  digitalWrite(Led_calib, LOW);
+  ledcWrite(MOTOR_PWM_PIN, 255);
+  Serial.println("Motor ON");
+  Serial.println("Esperando primer esquina para definir dirección de giro...");
+}
+
+// ============================================================
+void loop() {
+  if (detenido) { delay(100); return; }
+
+  leerIMU();
+  yaw = fusion.getYaw();
+  leerSensores();
+
+  // Detectar esquina
+  bool cooldownOK = (millis() - tUltimoGiro) > COOLDOWN_GIRO_MS;
+  if (cooldownOK && giroCount < 16) {
+    bool esquinaDer = s1_ok && dist_der > DISTANCIA_GIRO_MM;
+    bool esquinaIzq = s2_ok && dist_izq > DISTANCIA_GIRO_MM;
+
+    if (esquinaDer || esquinaIzq) {
+      // Primer giro: definir dirección para todos los siguientes
+      if (dirGiro == 0) {
+        if (esquinaIzq) dirGiro = 2;   // izquierda detectó primero → todos a la izquierda
+        else            dirGiro = 1;   // derecha detectó primero → todos a la derecha
+        Serial.print("Dirección de giro definida: ");
+        Serial.println(dirGiro == 1 ? "DERECHA" : "IZQUIERDA");
+        // También resetear error de posición según nueva dirección
+        integral_pos  = 0;
+        prevError_pos = 0;
+      }
+      girar();
+      return;
+    }
+  }
+
+  // PID IMU
+  float salidaYaw = 0.0f;
+  {
+    float err = normYaw(targetYaw - yaw);
+    integral_yaw += err * deltat;
+    integral_yaw  = constrain(integral_yaw, -integralLimit_yaw, integralLimit_yaw);
+    float deriv   = deltat > 0 ? (err - prevError_yaw) / deltat : 0;
+    prevError_yaw = err;
+    salidaYaw     = (kp_yaw * err) + (ki_yaw * integral_yaw) + (kd_yaw * deriv);
+    salidaYaw     = constrain(salidaYaw, -30.0f, 30.0f);
+  }
+
+  // PID posición (dos sensores)
+  float salidaPos = 0.0f;
+  bool ambosValidos = s1_ok && s2_ok && dist_der < 2000 && dist_izq < 2000;
+  if (ambosValidos) {
+    float err = calcularError();
+    integral_pos += err * deltat;
+    integral_pos  = constrain(integral_pos, -integralLimit_pos, integralLimit_pos);
+    float deriv   = deltat > 0 ? (err - prevError_pos) / deltat : 0;
+    prevError_pos = err;
+    salidaPos     = (kp_pos * err) + (ki_pos * integral_pos) + (kd_pos * deriv);
+    salidaPos     = constrain(salidaPos, -30.0f, 30.0f);
+  } else {
+    integral_pos  = 0;
+    prevError_pos = 0;
+  }
+
+  // Mezcla
+  float correccion = (mixYaw * salidaYaw) + (mixPos * salidaPos);
+  correccion = constrain(correccion, -CORRECCION_MAX, CORRECCION_MAX);
+
+  // Servo
+  int servoAngle = constrain(SERVO_CENTRO - (int)correccion, 0, 180);
+  ledcWrite(SERVO_PIN, servoAngleToDuty(servoAngle));
+
+  // Print
+  if (++printCounter >= PRINT_EVERY_N) {
+    printCounter = 0;
+    float errPos = ambosValidos ? calcularError() : 0;
+    Serial.print("Der:"); Serial.print(dist_der);
+    Serial.print("mm | Izq:"); Serial.print(dist_izq);
+    Serial.print("mm | ErrPos:"); Serial.print(errPos, 0);
+    Serial.print(" | SalPos:"); Serial.print(salidaPos, 1);
+    Serial.print(" | Yaw:"); Serial.print(yaw, 1);
+    Serial.print(" | SalY:"); Serial.print(salidaYaw, 1);
+    Serial.print(" | Mix:"); Serial.print(correccion, 1);
+    Serial.print(" | Servo:"); Serial.print(servoAngle);
+    Serial.print(" | Dir:"); Serial.print(dirGiro == 0 ? "?" : dirGiro == 1 ? "DER" : "IZQ");
+    Serial.print(" | Giros:"); Serial.println(giroCount);
+  }
+}
+
+// ============================================================
+// Error de posición según dirección definida
+// dirGiro == 0 → aún no definido, usa fórmula neutral (2×izq - 1×der)
+// dirGiro == 1 → gira derecha → pared derecha es referencia → (2×der - 1×izq)
+// dirGiro == 2 → gira izquierda → pared izquierda es referencia → (2×izq - 1×der)
+// ============================================================
+float calcularError() {
+  if (dirGiro == 1) {
+    return (float)(2 * dist_der) - (float)(1 * dist_izq);
+  } else {
+    // dirGiro == 0 o 2
+    return (float)(2 * dist_izq) - (float)(1 * dist_der);
+  }
+}
+
+// ============================================================
+// GIRO
+// ============================================================
+void girar() {
+  tUltimoGiro = millis();
+
+  Serial.print(">> Giro #"); Serial.print(giroCount + 1);
+  Serial.print(" | Dir:"); Serial.print(dirGiro == 1 ? "DERECHA" : "IZQUIERDA");
+  Serial.print(" | Der:"); Serial.print(dist_der);
+  Serial.print("mm | Izq:"); Serial.println(dist_izq);
+
+  // Ángulo objetivo según dirección
+  // derecha = targetYaw - 90°
+  // izquierda = targetYaw + 90°
+  float nuevoTarget = (dirGiro == 1)
+    ? normYaw(targetYaw - 90.0f)
+    : normYaw(targetYaw + 90.0f);
+
+  // Servo al extremo correspondiente
+  int extremo = (dirGiro == 1) ? 180 : 0;
+  ledcWrite(SERVO_PIN, servoAngleToDuty(extremo));
+  ledcWrite(MOTOR_PWM_PIN, 255);
+
+  unsigned long tInicio = millis();
+
+  while (true) {
+    if (millis() - tInicio > TIMEOUT_GIRO_MS) {
+      Serial.println("TIMEOUT — salida forzada");
+      break;
+    }
+
+    leerIMU();
+    float yawActual = fusion.getYaw();
+    float errorGiro = normYaw(nuevoTarget - yawActual);
+
+    static unsigned long lastPrint = 0;
+    if (millis() - lastPrint > 150) {
+      lastPrint = millis();
+      Serial.print("Girando | Yaw:"); Serial.print(yawActual, 1);
+      Serial.print(" | Obj:"); Serial.print(nuevoTarget, 1);
+      Serial.print(" | Err:"); Serial.println(errorGiro, 1);
+    }
+
+    if (abs(errorGiro) <= 5.0f) {
+      Serial.println("Giro completado.");
+      break;
+    }
+    delay(5);
+  }
+
+  // Absorbe drift
+  targetYaw     = fusion.getYaw();
+  integral_yaw  = 0; prevError_yaw  = 0;
+  integral_pos  = 0; prevError_pos  = 0;
+
+  giroCount++;
+  Serial.print("Giros: "); Serial.print(giroCount); Serial.println("/16");
+
+  if (giroCount >= 16) {
+    ledcWrite(MOTOR_PWM_PIN, 0);
+    ledcWrite(SERVO_PIN, servoAngleToDuty(SERVO_CENTRO));
+    Serial.println("*** 16 giros — Robot detenido ***");
+    detenido = true;
+    return;
+  }
+
+  // Avanzar recto 200ms
+  ledcWrite(SERVO_PIN, servoAngleToDuty(SERVO_CENTRO));
+  delay(200);
+
+  ledcWrite(MOTOR_PWM_PIN, 255);
+  Serial.println("Control normal.");
+}
+
+// ============================================================
+// HELPERS
+// ============================================================
+void leerIMU() {
+  int16_t ar, br, cr, dr, er, fr;
+  mpu.getMotion6(&ar, &br, &cr, &dr, &er, &fr);
+  float axf = ((float)ar - ax_offset) / 16384.0f;
+  float ayf = ((float)br - ay_offset) / 16384.0f;
+  float azf = ((float)cr - az_offset) / 16384.0f;
+  float gxf = (((float)dr - gx_offset) / 131.0f) * DEG_TO_RAD;
+  float gyf = (((float)er - gy_offset) / 131.0f) * DEG_TO_RAD;
+  float gzf = (((float)fr - gz_offset) / 131.0f) * DEG_TO_RAD;
+  deltat = fusion.deltatUpdate();
+  if (deltat > 0.0f && deltat <= 0.2f)
+    fusion.MadgwickUpdate(gxf, gyf, gzf, axf, ayf, azf, deltat);
+}
+
+bool leerSensores() {
+  VL53L0X_RangingMeasurementData_t m;
+  if (s1_ok) {
+    sensor1.rangingTest(&m, false);
+    dist_der = (m.RangeStatus != 4) ? m.RangeMilliMeter : 9999;
+  }
+  if (s2_ok) {
+    sensor2.rangingTest(&m, false);
+    dist_izq = (m.RangeStatus != 4) ? m.RangeMilliMeter : 9999;
+  }
+  return true;
+}
+
+int servoAngleToDuty(int angle) {
+  return map(angle, 0, 180, SERVO_DUTY_MIN, SERVO_DUTY_MAX);
+}
+
+float normYaw(float e) {
+  while (e >  180.0f) e -= 360.0f;
+  while (e < -180.0f) e += 360.0f;
+  return e;
+}
+
+void calibrarIMU() {
+  long as=0,bs=0,cs=0,ds=0,es=0,fs=0;
+  int16_t ar,br,cr,dr,er,fr;
+  for (int i = 0; i < calibraciones; i++) {
+    mpu.getMotion6(&ar,&br,&cr,&dr,&er,&fr);
+    as+=ar; bs+=br; cs+=cr; ds+=dr; es+=er; fs+=fr;
+    delay(3);
+  }
+  ax_offset = (float)as/calibraciones;
+  ay_offset = (float)bs/calibraciones;
+  az_offset = ((float)cs/calibraciones) - 16384.0f;
+  gx_offset = (float)ds/calibraciones;
+  gy_offset = (float)es/calibraciones;
+  gz_offset = (float)fs/calibraciones;
+  Serial.print("Offsets Acel: "); Serial.print(ax_offset); Serial.print(", "); Serial.print(ay_offset); Serial.print(", "); Serial.println(az_offset);
+  Serial.print("Offsets Giro: "); Serial.print(gx_offset); Serial.print(", "); Serial.print(gy_offset); Serial.print(", "); Serial.println(gz_offset);
+}
