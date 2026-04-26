@@ -11,25 +11,25 @@
 #define SERVO_PIN       13
 const int SERVO_DUTY_MIN = 13;
 const int SERVO_DUTY_MAX = 26;
-const int SERVO_CENTRO   = 90;
+const int SERVO_CENTRO   = 90;  // angle for robot to go straight
 
-// ========== SENSORES ==========
-#define XSHUT_S1 17    // derecho  × 1
-#define XSHUT_S2 16    // izquierdo × 2
+// ========== SENSORS ==========
+#define XSHUT_S1 17    // right sensor = S1
+#define XSHUT_S2 16    // left sensor  = S2
 #define ADDR_S1  0x30
 #define ADDR_S2  0x31
 Adafruit_VL53L0X sensor1, sensor2;
 bool     s1_ok = false, s2_ok = false;
-uint16_t dist_der = 9999;   // S1 derecho
-uint16_t dist_izq = 9999;   // S2 izquierdo
+uint16_t dist_der = 9999;   
+uint16_t dist_izq = 9999;   
 
-// ========== UMBRAL ESQUINA ==========
-const uint16_t DISTANCIA_GIRO_MM = 1000;   // mm — pierde pared = esquina
+// ========== DETECT CORNER ==========
+const uint16_t DISTANCIA_GIRO_MM = 1000;   // mm — lost wall = corner detected
 
-// ========== DIRECCIÓN DE GIRO ==========
-// 0 = no definida aún
-// 1 = gira a la derecha (S1 detectó esquina primero)
-// 2 = gira a la izquierda (S2 detectó esquina primero)
+// ========== TURNING DIRECTION ==========
+// 0 = not defined
+// 1 = right turn = S1 detected corner
+// 2 = left turn = S2 detected corner
 uint8_t dirGiro = 0;
 
 // ========== COOLDOWN ==========
@@ -54,10 +54,10 @@ float integral_yaw  = 0.0f;
 float prevError_yaw = 0.0f;
 const float integralLimit_yaw = 40.0f;
 
-// ========== PID POSICIÓN (error de dos sensores) ==========
-// error = (2×izq) - (1×der)  →  0 cuando robot al 33% del lado izquierdo
-// o     = (2×der) - (1×izq)  →  0 cuando robot al 33% del lado derecho
-// dependiendo de dirGiro
+// ========== PID POSITION (2 sensor error combined) ==========
+// error = (2×left) - (1×right)  →  0 when robot on 33% left side
+// o     = (2×right) - (1×left)  →  0 when robot on 33% right side
+// it basically depends on the dirGiro to decide which one
 float kp_pos = 0.08f;
 float ki_pos = 0.0005f;
 float kd_pos = 0.5f;
@@ -65,14 +65,14 @@ float integral_pos  = 0.0f;
 float prevError_pos = 0.0f;
 const float integralLimit_pos = 60.0f;
 
-// Pesos de mezcla
+// Weight of each one
 float mixYaw = 0.3f;
 float mixPos = 0.7f;
 
-// Límite corrección total
+// Maximum correction limit
 const float CORRECCION_MAX = 35.0f;
 
-// ========== ESTADO ==========
+// ========== CURRENT STATE ==========
 uint8_t       giroCount  = 0;
 bool          detenido   = false;
 const unsigned long TIMEOUT_GIRO_MS = 4000;
@@ -81,7 +81,7 @@ const unsigned long TIMEOUT_GIRO_MS = 4000;
 const int PRINT_EVERY_N = 5;
 int printCounter = 0;
 
-// ========== PROTOTIPOS ==========
+// ========== PROTOTYPES (testing functions <3 ) ==========
 void  calibrarIMU();
 void  leerIMU();
 bool  leerSensores();
@@ -95,17 +95,17 @@ void setup() {
   Serial.begin(115200);
   Wire.begin(21, 22);
 
-  // Motor apagado
+  // Motor off
   pinMode(MOTOR_DIR_PIN, OUTPUT);
   digitalWrite(MOTOR_DIR_PIN, LOW);
   ledcAttach(MOTOR_PWM_PIN, 5000, 8);
   ledcWrite(MOTOR_PWM_PIN, 0);
 
-  // Servo al centro
+  // Servo to center
   ledcAttach(SERVO_PIN, 50, 8);
   ledcWrite(SERVO_PIN, servoAngleToDuty(SERVO_CENTRO));
 
-  // S1 derecho
+  // S1 
   pinMode(XSHUT_S1, OUTPUT);
   pinMode(XSHUT_S2, OUTPUT);
   digitalWrite(XSHUT_S1, LOW);
@@ -131,7 +131,7 @@ void setup() {
   Serial.println("Calibrando IMU... NO MUEVAS");
   calibrarIMU();
 
-  // Calentar filtro
+  // apply filter
   Serial.println("Estabilizando filtro...");
   for (int i = 0; i < 300; i++) {
     leerIMU();
@@ -155,14 +155,14 @@ void loop() {
   yaw = fusion.getYaw();
   leerSensores();
 
-  // Detectar esquina
+  // Detects corner
   bool cooldownOK = (millis() - tUltimoGiro) > COOLDOWN_GIRO_MS;
   if (cooldownOK && giroCount < 16) {
     bool esquinaDer = s1_ok && dist_der > DISTANCIA_GIRO_MM;
     bool esquinaIzq = s2_ok && dist_izq > DISTANCIA_GIRO_MM;
 
     if (esquinaDer || esquinaIzq) {
-      // Primer giro: definir dirección para todos los siguientes
+      // After first corner, we define turning direction for the rest of the run
       if (dirGiro == 0) {
         if (esquinaIzq) dirGiro = 2;   // izquierda detectó primero → todos a la izquierda
         else            dirGiro = 1;   // derecha detectó primero → todos a la derecha
@@ -189,7 +189,7 @@ void loop() {
     salidaYaw     = constrain(salidaYaw, -30.0f, 30.0f);
   }
 
-  // PID posición (dos sensores)
+  // PID position
   float salidaPos = 0.0f;
   bool ambosValidos = s1_ok && s2_ok && dist_der < 2000 && dist_izq < 2000;
   if (ambosValidos) {
@@ -205,7 +205,7 @@ void loop() {
     prevError_pos = 0;
   }
 
-  // Mezcla
+  // Blend weights
   float correccion = (mixYaw * salidaYaw) + (mixPos * salidaPos);
   correccion = constrain(correccion, -CORRECCION_MAX, CORRECCION_MAX);
 
@@ -231,10 +231,10 @@ void loop() {
 }
 
 // ============================================================
-// Error de posición según dirección definida
-// dirGiro == 0 → aún no definido, usa fórmula neutral (2×izq - 1×der)
-// dirGiro == 1 → gira derecha → pared derecha es referencia → (2×der - 1×izq)
-// dirGiro == 2 → gira izquierda → pared izquierda es referencia → (2×izq - 1×der)
+// Position error for each case
+// dirGiro == 0 → not defined = (2×izq - 1×der)
+// dirGiro == 1 → right turn → (2×der - 1×izq)
+// dirGiro == 2 → left turn → (2×izq - 1×der)
 // ============================================================
 float calcularError() {
   if (dirGiro == 1) {
@@ -246,7 +246,7 @@ float calcularError() {
 }
 
 // ============================================================
-// GIRO
+// TURNING
 // ============================================================
 void girar() {
   tUltimoGiro = millis();
@@ -256,14 +256,14 @@ void girar() {
   Serial.print(" | Der:"); Serial.print(dist_der);
   Serial.print("mm | Izq:"); Serial.println(dist_izq);
 
-  // Ángulo objetivo según dirección
-  // derecha = targetYaw - 90°
-  // izquierda = targetYaw + 90°
+  // Set objective angle for yaw depending on direction
+  // right = targetYaw - 90°
+  // left = targetYaw + 90°
   float nuevoTarget = (dirGiro == 1)
     ? normYaw(targetYaw - 90.0f)
     : normYaw(targetYaw + 90.0f);
 
-  // Servo al extremo correspondiente
+  // servo to opposite side
   int extremo = (dirGiro == 1) ? 180 : 0;
   ledcWrite(SERVO_PIN, servoAngleToDuty(extremo));
   ledcWrite(MOTOR_PWM_PIN, 255);
@@ -295,15 +295,15 @@ void girar() {
     delay(5);
   }
 
-  // Absorbe drift
+  // We had some drift errors in our yaw, so this helps us compensate the error
   targetYaw     = fusion.getYaw();
   integral_yaw  = 0; prevError_yaw  = 0;
   integral_pos  = 0; prevError_pos  = 0;
 
   giroCount++;
-  Serial.print("Giros: "); Serial.print(giroCount); Serial.println("/16");
+  Serial.print("Giros: "); Serial.print(giroCount); Serial.println("/12");
 
-  if (giroCount >= 16) {
+  if (giroCount >= 12) {
     ledcWrite(MOTOR_PWM_PIN, 0);
     ledcWrite(SERVO_PIN, servoAngleToDuty(SERVO_CENTRO));
     Serial.println("*** 16 giros — Robot detenido ***");
@@ -311,7 +311,8 @@ void girar() {
     return;
   }
 
-  // Avanzar recto 200ms
+  // Go straight 200ms after turn, honestly we should implement this also for when the last turn, we realized if the corridor is set to narrow
+  // sometimes we don't make it back to our initial section
   ledcWrite(SERVO_PIN, servoAngleToDuty(SERVO_CENTRO));
   delay(200);
 
