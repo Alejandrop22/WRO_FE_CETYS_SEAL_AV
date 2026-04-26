@@ -26,7 +26,8 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
-| ![Placeholder](images/)    | ![Placeholder](images/)    | ![Placeholder](images/)
+| <img width="1200" height="1201" alt="TopView" src="https://github.com/user-attachments/assets/694cb16f-a8d5-46cf-a00e-129e799dc391" />| <img width="1200" height="1200" alt="FrontView" src="https://github.com/user-attachments/assets/dba39945-561a-41f5-80f6-4be05f992521" />| <img width="1200" height="1200" alt="SideView" src="https://github.com/user-attachments/assets/2e47eb3b-0a92-4f42-a474-ec16fce63caf" />
+
 
 ## Mechanical Systems
 
@@ -55,11 +56,11 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 |<img width="200" height="200" alt="LipoBattery" src="https://github.com/user-attachments/assets/f3547633-941e-4afc-8189-2a754e9a692d" />| Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
 | <img width="200" height="200" alt="ESP32" src="https://github.com/user-attachments/assets/4749645a-bd57-4d26-9eb0-98450272df4a" />| ESP32    | 1 | Motor |
 |<img width="200" height="200" alt="ESP32shield" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| ESP32 Shield    | 1 | Power Distribution |
-|<img width="200" height="200" alt="IMU" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| IMU mpu6050    | 1 | Orientation and Acceleration |
-|<img width="200" height="200" alt="TOFSensor" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| Time of Flight Sensor VL53L0X    | 2 | Wall Sensing |
-|<img width="200" height="200" alt="H bridge" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| H Bridge DR8833    | 1 | DC Motor Control |
-|<img width="200" height="200" alt="DC Motor" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| DC Reduction Motor    | 1 | Movement |
-|<img width="200" height="200" alt="Servo" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| Steering Servo    | 1 | Steering Direction Control |
+| <img width="200" height="200" alt="IMUmpu6050" src="https://github.com/user-attachments/assets/87af0059-332a-42a2-8881-e50abf32aacd" />| IMU mpu6050    | 1 | Orientation and Acceleration |
+|<img width="200" height="200" alt="Time of Flight Sensor" src="https://github.com/user-attachments/assets/5396ae09-c9c0-4d89-a187-79dc98e2b50c" />| Time of Flight Sensor VL53L0X    | 2 | Wall Sensing |
+| <img width="200" height="200" alt="H Bridge DR8833" src="https://github.com/user-attachments/assets/964bc4ab-3846-4f19-8cf4-fb0aab78738e" />| H Bridge DR8833    | 1 | DC Motor Control |
+|<img width="200" height="200" alt="DC Reduction Motor" src="https://github.com/user-attachments/assets/d8146747-21d1-4595-b164-c3306654f4f3" />| DC Reduction Motor    | 1 | Movement |
+| <img width="200" height="200" alt="Steering Servo" src="https://github.com/user-attachments/assets/c66fa4a6-ed05-48e5-9949-b85584c79852" />| Steering Servo    | 1 | Steering Direction Control |
 
 - IMU
 
