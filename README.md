@@ -12,7 +12,8 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 
 ## Meet the team !!
 
-![Placeholder](images/)
+<img width="580" height="400" alt="Team" src="https://github.com/user-attachments/assets/24d6e1cf-8024-42e7-bde4-daf8793d4bc1" />
+
 
 |![Placeholder](images/)  |![Placeholder](images/)  |![Placeholder](images/)  |
 |-----------|-----------|-----------|
