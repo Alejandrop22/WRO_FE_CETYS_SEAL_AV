@@ -15,7 +15,7 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 <img width="580" height="400" alt="Team" src="https://github.com/user-attachments/assets/24d6e1cf-8024-42e7-bde4-daf8793d4bc1" />
 
 
-|![Placeholder](images/)  |![Placeholder](images/)  |![Placeholder](images/)  |
+| |  |  |
 |-----------|-----------|-----------|
 | Alejandro Pineda   | Jorge Ibarra    | Yumián Rodríguez    |
 | Studying: Electronic Cybernetics Engineering    | Studying:  Computer Science Engineering    | Studying: Electronic Cybernetics Engineering    |
@@ -23,7 +23,7 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 
 
 ## Robot Overview
-S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35kg
+S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: 0.35kg
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
@@ -90,8 +90,7 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 
 ## Code and Sensing Logic
 
-Coding
-
+(**TRADUCTION PENDING**)
 
 Al iniciar nuestro código empieza un ciclo de calibración donde hace 2000 lecturas de nuestra imu con el algoritmo de SensorFusion de xioTecnologies, de esta manera guardamos la media de diferencia a los 180 grados de las lecturas y lo colocamos como un offset en los 6 ejes, la aceleración en el eje x y y z y la aceleración angular en el eje x y y z.
 
@@ -109,7 +108,7 @@ Flujo del PID
 Durante el control del robot tenemos una condición que es girando, entonces si la lectura del sensor de distancia a los lados lee más de 50 centímetros de distancia detecta como una esquina y la condición se convierte en true, y gira hacia el lado de detecte el sensor. El giro se realiza hasta que el ángulo de la lectura de la imu sea igual a +- 90. y se agrega un 1 al contador de giros.
 
 
-El código termina cuando el contador de giros es igual a 16.
+La rutina termina cuando el contador de giros es igual a 12.
 
 
 
