@@ -68,12 +68,12 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 
 - H bridge
 
-| ![Placeholder](images/) | We take 5V power directly form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays constantly high for the straight sections of the route, when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
+| <img width="400" height="400" alt="H_Bridge" src="https://github.com/user-attachments/assets/f5be8ccf-68fd-40e6-a937-e94ae3d800ee" />| We take 5V power directly form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays constantly high for the straight sections of the route, when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
 |-----------|-----------|
 
 - ESP Shield
 
-| ![Placeholder](images/) | Our ESP32 shield allows us to connect all of our components for the ESP32 to control them, thanks to this, we are also able to send 5V power to our IMU directly for the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is helping us a lot. | 
+| <img width="500" height="500" alt="ESP32andSHIELD" src="https://github.com/user-attachments/assets/b6c032ef-5b4d-4c1f-bfec-00e8c613832a" />| Our ESP32 shield allows us to connect all of our components for the ESP32 to control them, thanks to this, we are also able to send 5V power to our IMU directly for the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is helping us a lot. | 
 |-----------|-----------|
 
 - Lipo Rider and Power Supply
@@ -83,7 +83,7 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: .35k
 
 - Time of Flight Sensors
 
-| ![Placeholder](images/) | The sensors emit infrared light beams, which helps us read the distance from the robot to the left and right wall. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, add a delay of 100ms beetween each initialization.** | 
+| <img width="400" height="400" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the left and right wall. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, add a delay of 100ms beetween each initialization.** | 
 |-----------|-----------|
 
 ## Code and Sensing Logic
