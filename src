@@ -157,7 +157,7 @@ void loop() {
 
   // Detects corner
   bool cooldownOK = (millis() - tUltimoGiro) > COOLDOWN_GIRO_MS;
-  if (cooldownOK && giroCount < 16) {
+  if (cooldownOK && giroCount < 12) {
     bool esquinaDer = s1_ok && dist_der > DISTANCIA_GIRO_MM;
     bool esquinaIzq = s2_ok && dist_izq > DISTANCIA_GIRO_MM;
 
@@ -232,15 +232,18 @@ void loop() {
 
 // ============================================================
 // Position error for each case
-// dirGiro == 0 → not defined = (2×izq - 1×der)
+// dirGiro == 0 → not defined = (1×izq - 1×der)
 // dirGiro == 1 → right turn → (2×der - 1×izq)
 // dirGiro == 2 → left turn → (2×izq - 1×der)
 // ============================================================
 float calcularError() {
   if (dirGiro == 1) {
     return (float)(2 * dist_der) - (float)(1 * dist_izq);
-  } else {
-    // dirGiro == 0 o 2
+  } if(dirGiro== 0){
+  return (float)(1 * dist_izq) - (float)(1 * dist_der);
+  }
+else {
+    // dirGiro == 2
     return (float)(2 * dist_izq) - (float)(1 * dist_der);
   }
 }
