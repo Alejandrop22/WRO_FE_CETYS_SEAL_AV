@@ -28,7 +28,8 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: 0.35
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
-| <img width="1200" height="1201" alt="TopView" src="https://github.com/user-attachments/assets/694cb16f-a8d5-46cf-a00e-129e799dc391" />| <img width="1200" height="1200" alt="FrontView" src="https://github.com/user-attachments/assets/dba39945-561a-41f5-80f6-4be05f992521" />| <img width="1200" height="1200" alt="SideView" src="https://github.com/user-attachments/assets/2e47eb3b-0a92-4f42-a474-ec16fce63caf" />
+| <img width="200" height="200" alt="TopView" src="https://github.com/user-attachments/assets/6b4d195e-cb35-432c-ba67-22a52ca0f535" />|<img width="200" height="200" alt="FrontView" src="https://github.com/user-attachments/assets/2aec13e2-a650-4625-961f-59a297f0c053" />|<img width="200" height="200" alt="SideView" src="https://github.com/user-attachments/assets/1dbee507-dae4-423d-84da-fa039ccfaacb" />|
+
 
 
 ## Mechanical Systems
