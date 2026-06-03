@@ -24,7 +24,7 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 We also want to thank our team mentor who has been with us from the start, Luis C. Básaca.
 
 ## Robot Overview
-S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: 0.35kg
+S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight: 0.4kg
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
@@ -34,7 +34,7 @@ S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: 0.35
 
 ## Mechanical Systems
 
-- Rear Wheel Drive
+- Diferential Rear Wheel Drive
   
 | <img width="330" height="330" alt="motorUnder" src="https://github.com/user-attachments/assets/2819386c-d53c-4635-b0f4-449165f3adbe" />| Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. |
 |-----------|-----------|
