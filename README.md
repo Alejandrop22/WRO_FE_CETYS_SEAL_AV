@@ -39,9 +39,9 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 | <img width="330" height="330" alt="motorUnder" src="https://github.com/user-attachments/assets/2819386c-d53c-4635-b0f4-449165f3adbe" />| Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. |
 |-----------|-----------|
 
-- Servo Motor Ackerman Steering
+- Servo Motor Whole Axle Steering
 
-| <img width="400" height="400" alt="Servo" src="https://github.com/user-attachments/assets/902e22c1-61c2-43ff-84a8-deb6163e0018" />| Driven by 1 9g servo motor that controls the angle on both our front wheels. Using an ackermnan steer lets us take advantage of the servo for tighter turns around the corners. | 
+| <img width="400" height="400" alt="Servo" src="https://github.com/user-attachments/assets/902e22c1-61c2-43ff-84a8-deb6163e0018" />| Driven by 1 9g servo motor that controls the angle on both our front wheels. We have a conventional whole axle steering mounted directly underneath our servo with a lego coupling shaft.| 
 |-----------|-----------|
 
 - Modular Double Decker Chasis
