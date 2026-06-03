@@ -21,6 +21,7 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 | Studying: Electronic Cybernetics Engineering    | Studying:  Computer Science Engineering    | Studying: Electronic Cybernetics Engineering    |
 | Excited to obtain a good placement in the 2026 Future Engineers season.  | Wants to travel to an international championship.  | Ready to work on the prototype day and night. |
 
+We also want to thank our team mentor who has been with us from the start, Luis C. Básaca.
 
 ## Robot Overview
 S.E.A.L.   Dimensions:  Wdidth 17cm x  Long 11cm x  Height 15cm     Weight: 0.35kg
