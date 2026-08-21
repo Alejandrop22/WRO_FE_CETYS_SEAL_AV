@@ -73,22 +73,22 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 
 - H bridge
 
-| <img width="470" height="470" alt="H_Bridge" src="https://github.com/user-attachments/assets/f5be8ccf-68fd-40e6-a937-e94ae3d800ee" />| We take 5V power directly form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays constantly high for the straight sections of the route, when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
+| <img width="470" height="470" alt="H_Bridge" src="https://github.com/user-attachments/assets/f5be8ccf-68fd-40e6-a937-e94ae3d800ee" />| We take 5V power form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays high for the straight sections of the route. While when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
 |-----------|-----------|
 
 - ESP Shield
 
-| <img width="500" height="500" alt="ESP32andSHIELD" src="https://github.com/user-attachments/assets/b6c032ef-5b4d-4c1f-bfec-00e8c613832a" />| Our ESP32 shield allows us to connect all of our components for the ESP32 to control them, thanks to this, we are also able to send 5V power to our IMU directly for the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is helping us a lot. | 
+| <img width="500" height="500" alt="ESP32andSHIELD" src="https://github.com/user-attachments/assets/b6c032ef-5b4d-4c1f-bfec-00e8c613832a" />| We connect all of our components to our ESP32 shield so it can directly control them, thanks to this, we are also able to send 5V power to our IMU straight from the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is of great importance. | 
 |-----------|-----------|
 
 - Lipo Rider and Power Supply
 
-| <img width="600" height="600" alt="Lipo" src="https://github.com/user-attachments/assets/af706a99-06d5-4245-9cbd-090e397aaefa" /> | We connect our 3.7V lipo to the Lipo Rider Plus, and use it to power our ESP Shield, through 5V USB A to USB C, and our H Bridge, though 5V and GND pins. We can use the battery for around 2 hours before it need to charge, which takes around half an hour from empty to full. We are looking into getting a double cell 7.4V battery which also has more than 1500 mAh. | 
+| <img width="600" height="600" alt="Lipo" src="https://github.com/user-attachments/assets/af706a99-06d5-4245-9cbd-090e397aaefa" /> | We connect our 3.7V lipo to the Lipo Rider Plus. With this we power many comments, like the ESP Shield, which connects from a 5V USB A to USB C and our H Bridge connects through 5V and GND pins. The battery life lasts an average of 2 hours per use meanwhile recharging takes around half an hour. We are looking into getting a double cell 7.4V battery which also has more than 1500 mAh. | 
 |-----------|-----------|
 
 - Time of Flight Sensors
 
-| <img width="430" height="430" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the left and right wall. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, add a delay of 100ms beetween each initialization.** | 
+| <img width="430" height="430" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
 |-----------|-----------|
 
 ## Code and Sensing Logic
