@@ -60,9 +60,10 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 | <img width="200" height="200" alt="ESP32" src="https://github.com/user-attachments/assets/4749645a-bd57-4d26-9eb0-98450272df4a" />| ESP32    | 1 | Motor |
 |<img width="200" height="200" alt="ESP32shield" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| ESP32 Shield    | 1 | Power Distribution |
 | <img width="200" height="200" alt="IMUmpu6050" src="https://github.com/user-attachments/assets/87af0059-332a-42a2-8881-e50abf32aacd" />| IMU mpu6050    | 1 | Orientation and Acceleration |
-|<img width="200" height="200" alt="Time of Flight Sensor" src="https://github.com/user-attachments/assets/5396ae09-c9c0-4d89-a187-79dc98e2b50c" />| Time of Flight Sensor VL53L0X    | 1 | Wall Sensing |
+|<img width="750" height="750" alt="image" src="https://github.com/user-attachments/assets/2a38df9b-1fc6-4cae-b788-cc98c7928bd1" />
+| Time of Flight Sensor VL53L0X    | 1 | Wall Sensing |
 |<img width="447" height="447" alt="image" src="https://github.com/user-attachments/assets/009884c1-34d4-44d9-a8ec-a5e001456b03" />
-" />| Time of Flight Sensor VL53L1x TOF    | 2 | Wall Sensing |
+| Time of Flight Sensor VL53L1x TOF    | 2 | Wall Sensing |
 | <img width="200" height="200" alt="H Bridge DR8833" src="https://github.com/user-attachments/assets/964bc4ab-3846-4f19-8cf4-fb0aab78738e" />| H Bridge DR8833    | 1 | DC Motor Control |
 |<img width="200" height="200" alt="DC Reduction Motor" src="https://github.com/user-attachments/assets/d8146747-21d1-4595-b164-c3306654f4f3" />| DC Reduction Motor    | 1 | Movement |
 | <img width="200" height="200" alt="Steering Servo" src="https://github.com/user-attachments/assets/c66fa4a6-ed05-48e5-9949-b85584c79852" />| Steering Servo    | 1 | Steering Direction Control |
