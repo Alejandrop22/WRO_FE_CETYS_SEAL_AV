@@ -1,6 +1,6 @@
 <img width="1000" height="163" alt="ocean-ezgif com-crop" src="https://github.com/user-attachments/assets/6f247592-862b-4f81-bef1-7ff0c6155132" />
 
-# WRO_FE_CETYS_SEAL_AV
+# WRO_FE_CETYS_SEAL_AV 🦭
 
 World Robot Olympiad - Future Engineers 2026 - CETYS SEAL AV
 
@@ -74,10 +74,6 @@ You can find more pictures in our [v-photos
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/01845506-fd29-4965-abcb-02d0c9a7cb5c" />| OV3660 3MP 24 Pin     | 1 | Camera |
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/21ec1d07-71d3-4683-ad10-65a71d7a351d" />| BAOTER 3296 Buck Converter    | 1 | Voltage Control |
 
-- IMU
-
-| <img width="570" height="570" alt="Imu" src="https://github.com/user-attachments/assets/810dfbe1-ee96-49cc-806e-220edd4d8505" />| Our IMU(Inertial Measurement Unit) MPU6050, with the use of a sensor, meassures the aceleration of the component. Depending on the I2C protocol, we get the values of 6 acelerations, x y z and angular x y z. With these values and various other algorithms we can calculate the yaw that helps our robot stay centered while turning. |
-|-----------|-----------|
 
 - H bridge
 
