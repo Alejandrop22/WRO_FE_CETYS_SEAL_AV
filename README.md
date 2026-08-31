@@ -1,6 +1,6 @@
 <img width="1000" height="163" alt="ocean-ezgif com-crop" src="https://github.com/user-attachments/assets/6f247592-862b-4f81-bef1-7ff0c6155132" />
 
-# WRO_FE_CETYS_SEAL_AV 🦭
+# WRO_FE_CETYS_SEAL_AV 🪛🦭
 
 World Robot Olympiad - Future Engineers 2026 - CETYS SEAL AV
 
