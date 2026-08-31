@@ -25,6 +25,8 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 
 We also want to thank our team mentor who has been with us from the start, Luis C. Básaca.
 
+<img width="950" height="532" alt="image" src="https://github.com/user-attachments/assets/29ed938a-41f6-4f44-9fdb-c4efb01ffd3c" />
+
 ## Robot Overview
 S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight: 0.4kg
 
@@ -95,6 +97,7 @@ You can find more pictures in our [v-photos
 | <img width="430" height="430" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
 |-----------|-----------|
 
+<img width="950" height="532" alt="image" src="https://github.com/user-attachments/assets/ee4d4b2c-b307-4bad-ad2a-38b5d69b0a37" />
 
 
 ## Code and Sensing Logic
