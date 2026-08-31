@@ -30,7 +30,7 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 |-----------|-----------|-----------|
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/70552900-3139-42ac-9373-90f4a26d7d7d" />|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/54733bae-d69e-49d2-b38a-4dc7c6958a88" />|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/f0cd3352-f1b6-4f10-aa2f-ffc62dc452ec" />|
 
-You can find more pictures in our [v-photos(https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/main/v-photos)
+You can find more pictures in our [v-photos(https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/main/v-photos):
 
 
 
