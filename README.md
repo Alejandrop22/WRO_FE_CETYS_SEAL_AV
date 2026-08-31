@@ -25,7 +25,7 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 
 We also want to thank our team mentor who has been with us from the start, Luis C. Básaca.
 
-<img width="1772" height="32" alt="image" src="https://github.com/user-attachments/assets/563bd4e0-14f5-44d8-b4c2-15ba176069fe" />
+![Uploading image.png…]()
 
 
 ## Robot Overview
