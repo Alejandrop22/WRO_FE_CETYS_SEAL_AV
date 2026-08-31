@@ -28,7 +28,10 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
-| <img width="200" height="200" alt="TopView" src="https://github.com/user-attachments/assets/6b4d195e-cb35-432c-ba67-22a52ca0f535" />|<img width="200" height="200" alt="FrontView" src="https://github.com/user-attachments/assets/2aec13e2-a650-4625-961f-59a297f0c053" />|<img width="200" height="200" alt="SideView" src="https://github.com/user-attachments/assets/1dbee507-dae4-423d-84da-fa039ccfaacb" />|
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/70552900-3139-42ac-9373-90f4a26d7d7d" />
+|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/54733bae-d69e-49d2-b38a-4dc7c6958a88" />
+|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/f0cd3352-f1b6-4f10-aa2f-ffc62dc452ec" />|
+You can find more pictures in our t-photos folder.
 
 
 
