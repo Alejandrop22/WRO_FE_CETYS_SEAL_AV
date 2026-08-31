@@ -25,7 +25,7 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 
 We also want to thank our team mentor who has been with us from the start, Luis C. Básaca.
 
-<img width="1050" height="10" alt="image" src="https://github.com/user-attachments/assets/520cc265-1a65-4e8e-a80e-7458a93457be" />
+<img width="1050" height="8" alt="image" src="https://github.com/user-attachments/assets/520cc265-1a65-4e8e-a80e-7458a93457be" />
 
 
 
@@ -99,7 +99,7 @@ You can find more pictures in our [v-photos
 | <img width="430" height="430" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
 |-----------|-----------|
 
-<img width="1772" height="32" alt="image" src="https://github.com/user-attachments/assets/a0abdc2c-ad83-4aa4-8260-d6ad8cf987f3" />
+<img width="1050" height="8" alt="image" src="https://github.com/user-attachments/assets/520cc265-1a65-4e8e-a80e-7458a93457be" />
 
 
 
