@@ -1,3 +1,4 @@
+<img width="998" height="256" alt="image" src="https://github.com/user-attachments/assets/5890c165-a89e-4775-b409-ff1526797a0b" />
 # WRO_FE_CETYS_SEAL_AV
 
 World Robot Olympiad - Future Engineers 2026 - CETYS SEAL AV
