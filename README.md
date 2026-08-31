@@ -65,6 +65,9 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 | <img width="200" height="200" alt="H Bridge DR8833" src="https://github.com/user-attachments/assets/964bc4ab-3846-4f19-8cf4-fb0aab78738e" />| H Bridge DR8833    | 1 | DC Motor Control |
 |<img width="200" height="200" alt="DC Reduction Motor" src="https://github.com/user-attachments/assets/d8146747-21d1-4595-b164-c3306654f4f3" />| DC Reduction Motor    | 1 | Movement |
 | <img width="200" height="200" alt="Steering Servo" src="https://github.com/user-attachments/assets/c66fa4a6-ed05-48e5-9949-b85584c79852" />| Steering Servo    | 1 | Steering Direction Control |
+| <img width="430" height="430" alt="image" src="https://github.com/user-attachments/assets/33122929-928d-4fd0-982b-b70a2e55db85" />| ESP32 S3    | 1 | Camera Module  |
+| <img width="430" height="430" alt="image" src="https://github.com/user-attachments/assets/01845506-fd29-4965-abcb-02d0c9a7cb5c" />| OV3660 3MP 24 Pin     | 1 | Camera |
+| <img width="430" height="430" alt="image" src="https://github.com/user-attachments/assets/21ec1d07-71d3-4683-ad10-65a71d7a351d" />| BAOTER 3296 Buck Converter    | 1 | Voltage Control |
 
 - IMU
 
@@ -91,20 +94,7 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 | <img width="430" height="430" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
 |-----------|-----------|
 
-- ESP32 S3 Camera Module
 
-|<img width="430" height="430" alt="image" src="https://github.com/user-attachments/assets/33122929-928d-4fd0-982b-b70a2e55db85" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
-|-----------|-----------|
-
-- OV3660 3MP 24 Pin Camera Module
-
-|<img width="430" height="430" alt="image" src="https://github.com/user-attachments/assets/01845506-fd29-4965-abcb-02d0c9a7cb5c" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
-|-----------|-----------|
-
-- BAOTER 3296 Buck Converter
-
-|<img width="430" height="430" alt="image" src="https://github.com/user-attachments/assets/21ec1d07-71d3-4683-ad10-65a71d7a351d" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
-|-----------|-----------|
 
 ## Code and Sensing Logic
 
