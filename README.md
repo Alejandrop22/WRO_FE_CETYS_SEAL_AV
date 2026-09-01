@@ -33,7 +33,7 @@ We also want to thank our team mentor who has been with us from the start, Luis 
 
 Click the preview image below to rotate, zoom, and explore the 3D model for our robot directly in your browser:
 
-[<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/70552900-3139-42ac-9373-90f4a26d7d7d" />](https://sketchfab.com/3d-models/girthy-e7a50c23a9f7431e98fa3d997f9cdc22)
+[![Interact with 3D Model](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/images/3d-preview.png)](https://sketchfab.com/3d-models/girthy-e7a50c23a9f7431e98fa3d997f9cdc22)
 
 S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight: 0.4kg
 
