@@ -57,7 +57,7 @@ You can find more pictures in our [v-photos
 
 | Side View | Top View |
 |:---:|:---:|
-|<img width="702" height="418" alt="image" src="https://github.com/user-attachments/assets/1d79958a-c2e3-45f8-9c50-c2fb5e2d5b9a" />|<img width="621" height="532" alt="image" src="https://github.com/user-attachments/assets/11a22165-6610-4fa6-8fc0-08b5325c58ac" />|
+|<img width="702" height="418" alt="image" src="https://github.com/user-attachments/assets/1d79958a-c2e3-45f8-9c50-c2fb5e2d5b9a" />|<img width="581" height="418" alt="image" src="https://github.com/user-attachments/assets/11a22165-6610-4fa6-8fc0-08b5325c58ac" />|
 
 | Component | Teeth | Reduction Ratio |
 |:---|:---:|---:|
@@ -73,11 +73,11 @@ You can find more pictures in our [v-photos
 
 | Side View | Front View |
 |:---:|:---:|
-|<img width="332" height="438" alt="image" src="https://github.com/user-attachments/assets/db8aee40-d866-4d88-af1e-c942b044297a" />|<img width="330" height="424" alt="image" src="https://github.com/user-attachments/assets/039db80e-8a74-40b7-bd8e-c857844749a6" />|
+|<img width="227" height="300" alt="image" src="https://github.com/user-attachments/assets/77b5ed1a-49d4-4341-af4b-fb1fcbc3577f" />|<img width="234" height="300" alt="image" src="https://github.com/user-attachments/assets/1065b3d7-e7e6-4540-8efa-5584a762f21a" />|
 
 - Modular Double Decker Chasis
 
-| <img width="780" height="780" alt="DoubleDecker" src="https://github.com/user-attachments/assets/5f28c95c-71c9-457d-838c-210cd75169b5" />| We built our initial chasis out of lego, this allowed us to focus on the electronic and coding aspects of our build for the first few days. Lego actually ended up being a good plattform to build up from, since we had to make quick adjustments on the fly, all of this while helping us creat a modular and organized casing for our electronics. | 
+| <img width="780" height="780" alt="DoubleDecker" src="https://github.com/user-attachments/assets/5f28c95c-71c9-457d-838c-210cd75169b5" />| The robot's structural foundation is built around a double-decker LEGO chassis, designed to house electronic components on an elevated upper deck while the drivetrain and steering mechanisms occupy the lower level. This two-tiered configuration was initially adopted as a rapid prototyping solution, allowing the team to prioritize electronics integration and code development during the early stages of the build. However, LEGO's modular nature proved to be more than a temporary fix — it enabled quick on-the-fly adjustments without requiring specialized tools or fabrication, while simultaneously promoting a clean, organized layout for the control electronics. The resulting architecture strikes an effective balance between structural rigidity and accessibility, with the upper deck providing convenient access to sensors, microcontrollers, and wiring, all while maintaining a compact footprint suitable for the robot's intended operational environment. | 
 |-----------|-----------|
 
 ## Electronic Systems
