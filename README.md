@@ -54,22 +54,22 @@ You can find more pictures in our [v-photos
 |:---|:---|
 |<img width="1200" height="666" alt="Diferential" src="https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/images/isogirthdiff.png" />| The drivetrain employs a two-stage gear reduction architecture to optimize torque delivery from the N20 motor to the differential. The motor, rated at 1500 RPM, drives a 12-tooth pinion gear that meshes with a 20-tooth primary gear, yielding an initial reduction ratio of 1.67:1. This primary gear is rigidly mounted on an intermediate shaft alongside a secondary 12-tooth pinion, which in turn drives a 36-tooth final gear attached to the differential input shaft. This second stage provides an additional 3:1 reduction, resulting in a combined gear reduction of 5:1 and bringing the differential input speed down to approximately 300 RPM — an ideal balance between wheel torque and maneuverability for the robot's intended operating conditions. |
 
+
+| Side View | Top View |
+|:---:|:---:|
+|<img height="200" src="https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/images/sidegirthdiff.png" />|<img height="200" src="https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/images/topgirthdiff.png" />|
+
 | Component | Teeth | Reduction Ratio |
 |:---|:---:|---:|
 | Motor Pinion → Primary Gear | 12T → 20T | 1.67:1 |
 | Secondary Pinion → Final Gear | 12T → 36T | 3.00:1 |
 | **Total Reduction** | — | **5.00:1** |
 
-<details> <summary><b>Click to expand image gallery</b></summary> <br><div align="center">
-View	Image
-Side	https://path/to/side-full.jpg
-Top	https://path/to/top-full.jpg
-</div> </details>
-
 - Servo Motor Whole Axle Steering
 
-| <img width="430" height="430" alt="ServoMotor" src="https://github.com/user-attachments/assets/3c14c4bf-f9b5-4e4c-91f6-41956faba97d" />| Driven by 1 9g servo motor that controls the angle on both our front wheels. We have a conventional whole axle steering mounted directly underneath our servo with a lego coupling shaft.| 
-|-----------|-----------|
+| Isometric View | System Description |
+|:---|:---|
+|<img width="430" height="430" alt="Diferential" src="https://github.com/user-attachments/assets/3c14c4bf-f9b5-4e4c-91f6-41956faba97d" />| Steering is handled by a single 9g servo motor that actuates both front wheels through a conventional whole-axle mechanism. Mounted directly above the axle, the servo transmits motion via a LEGO coupling shaft to a central linkage, synchronizing the angle of both wheels for precise turning. This minimalist approach keeps weight low and response times quick, while the LEGO shaft simplifies prototyping and maintenance without sacrificing reliability. |
 
 - Modular Double Decker Chasis
 
