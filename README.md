@@ -13,14 +13,14 @@ Read our Build-Blog !! We document every day of our journey, including our chall
 ~ Build start date: Monday April 20th, 2026
 
 ## Meet the team !!
-
+<div align="center">
 <img width="580" height="400" alt="Team" src="https://github.com/user-attachments/assets/24d6e1cf-8024-42e7-bde4-daf8793d4bc1" />
-
+</div>
 
 | |  |  |
 |-----------|-----------|-----------|
-| Alejandro Pineda   | Jorge Ibarra    | Yumián Rodríguez    |
-| Studying: Electronic Cybernetics Engineering    | Studying:  Computer Science Engineering    | Studying: Electronic Cybernetics Engineering    |
+| Jorge Ibarra  | Yumián Rodríguez    |  Alejandro Pineda   |
+| Studying:  Computer Science Engineering    | Studying: Electronic Cybernetics Engineering    | Studying: Electronic Cybernetics Engineering    |
 | Excited to obtain a good placement in the 2026 Future Engineers season.  | Wants to travel to an international championship.  | Ready to work on the prototype day and night. |
 
 We also want to thank our team mentor who has been with us from the start, Luis C. Básaca.
@@ -48,11 +48,23 @@ You can find more pictures in our [v-photos
 ## Mechanical Systems
 
 
-
 - Diferential Rear Wheel Drive
-  
-| <img width="330" height="330" alt="Diferential" src="https://github.com/user-attachments/assets/5d29e850-e543-474e-83a2-6ab523eda8e3" />| Driven by 1 reduction motor with an approximate 60-1 reduction with lego gears. Currently using lego spike wheels for traction and large diameter. |
-|-----------|-----------|
+
+| Isometric View | System Description |
+|:---|:---|
+|<img width="660" height="660" alt="Diferential" src="https://github.com/user-attachments/assets/5d29e850-e543-474e-83a2-6ab523eda8e3" />| The drivetrain employs a two-stage gear reduction architecture to optimize torque delivery from the N20 motor to the differential. The motor, rated at 1500 RPM, drives a 12-tooth pinion gear that meshes with a 20-tooth primary gear, yielding an initial reduction ratio of 1.67:1. This primary gear is rigidly mounted on an intermediate shaft alongside a secondary 12-tooth pinion, which in turn drives a 36-tooth final gear attached to the differential input shaft. This second stage provides an additional 3:1 reduction, resulting in a combined gear reduction of 5:1 and bringing the differential input speed down to approximately 300 RPM — an ideal balance between wheel torque and maneuverability for the robot's intended operating conditions. |
+
+| Component | Teeth | Reduction Ratio |
+|:---|:---:|---:|
+| Motor Pinion → Primary Gear | 12T → 20T | 1.67:1 |
+| Secondary Pinion → Final Gear | 12T → 36T | 3.00:1 |
+| **Total Reduction** | — | **5.00:1** |
+
+<details> <summary><b>Click to expand image gallery</b></summary> <br><div align="center">
+View	Image
+Side	https://path/to/side-full.jpg
+Top	https://path/to/top-full.jpg
+</div> </details>
 
 - Servo Motor Whole Axle Steering
 
