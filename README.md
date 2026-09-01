@@ -33,13 +33,13 @@ We also want to thank our team mentor who has been with us from the start, Luis 
 
 Click the preview image below to rotate, zoom, and explore the 3D model for our robot directly in your browser:
 
-[![Interact with 3D Model](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/images/3d-preview.png)](https://sketchfab.com/3d-models/girthy-e7a50c23a9f7431e98fa3d997f9cdc22)
+[![Interact with 3D Model](https://github.com/user-attachments/assets/73407719-86bf-43be-ad00-6f52b11017eb)](https://sketchfab.com/3d-models/girthy-e7a50c23a9f7431e98fa3d997f9cdc22) 
 
 S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight: 0.4kg
 
 | Top View | Front View | Side View | 
 |-----------|-----------|-----------|
-| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/70552900-3139-42ac-9373-90f4a26d7d7d" />|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/54733bae-d69e-49d2-b38a-4dc7c6958a88" />|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/f0cd3352-f1b6-4f10-aa2f-ffc62dc452ec" />|
+| <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/70552900-3139-42ac-9373-90f4a26d7d7d" />|<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/54733bae-d69e-49d2-b38a-4dc7c6958a88" />|<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/f0cd3352-f1b6-4f10-aa2f-ffc62dc452ec" />|
 
 You can find more pictures in our [v-photos
 ](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/main/v-photos) 📸📸
@@ -52,12 +52,12 @@ You can find more pictures in our [v-photos
 
 | Isometric View | System Description |
 |:---|:---|
-|<img width="1200" height="666" alt="Diferential" src="https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/images/isogirthdiff.png" />| The drivetrain employs a two-stage gear reduction architecture to optimize torque delivery from the N20 motor to the differential. The motor, rated at 1500 RPM, drives a 12-tooth pinion gear that meshes with a 20-tooth primary gear, yielding an initial reduction ratio of 1.67:1. This primary gear is rigidly mounted on an intermediate shaft alongside a secondary 12-tooth pinion, which in turn drives a 36-tooth final gear attached to the differential input shaft. This second stage provides an additional 3:1 reduction, resulting in a combined gear reduction of 5:1 and bringing the differential input speed down to approximately 300 RPM — an ideal balance between wheel torque and maneuverability for the robot's intended operating conditions. |
+|<img width="933" height="518" alt="image" src="https://github.com/user-attachments/assets/4823358c-8f17-4d39-a4f9-9832dac28742" />| The drivetrain employs a two-stage gear reduction architecture to optimize torque delivery from the N20 motor to the differential. The motor, rated at 1500 RPM, drives a 12-tooth pinion gear that meshes with a 20-tooth primary gear, yielding an initial reduction ratio of 1.67:1. This primary gear is rigidly mounted on an intermediate shaft alongside a secondary 12-tooth pinion, which in turn drives a 36-tooth final gear attached to the differential input shaft. This second stage provides an additional 3:1 reduction, resulting in a combined gear reduction of 5:1 and bringing the differential input speed down to approximately 300 RPM — an ideal balance between wheel torque and maneuverability for the robot's intended operating conditions. |
 
 
 | Side View | Top View |
 |:---:|:---:|
-|<img height="200" src="https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/images/sidegirthdiff.png" />|<img height="200" src="https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/images/topgirthdiff.png" />|
+|<img width="702" height="418" alt="image" src="https://github.com/user-attachments/assets/1d79958a-c2e3-45f8-9c50-c2fb5e2d5b9a" />|<img width="621" height="532" alt="image" src="https://github.com/user-attachments/assets/11a22165-6610-4fa6-8fc0-08b5325c58ac" />|
 
 | Component | Teeth | Reduction Ratio |
 |:---|:---:|---:|
@@ -69,7 +69,11 @@ You can find more pictures in our [v-photos
 
 | Isometric View | System Description |
 |:---|:---|
-|<img width="430" height="430" alt="Diferential" src="https://github.com/user-attachments/assets/3c14c4bf-f9b5-4e4c-91f6-41956faba97d" />| Steering is handled by a single 9g servo motor that actuates both front wheels through a conventional whole-axle mechanism. Mounted directly above the axle, the servo transmits motion via a LEGO coupling shaft to a central linkage, synchronizing the angle of both wheels for precise turning. This minimalist approach keeps weight low and response times quick, while the LEGO shaft simplifies prototyping and maintenance without sacrificing reliability. |
+|<img width="510" height="593" alt="image" src="https://github.com/user-attachments/assets/ec33e47b-6745-43d5-bac4-edc6fe643576" />| Steering is handled by a single 9g servo motor that actuates both front wheels through a conventional whole-axle mechanism. Mounted directly above the axle, the servo transmits motion via a LEGO coupling shaft to a central linkage, synchronizing the angle of both wheels for precise turning. This minimalist approach keeps weight low and response times quick, while the LEGO shaft simplifies prototyping and maintenance without sacrificing reliability. |
+
+| Side View | Front View |
+|:---:|:---:|
+|<img width="332" height="438" alt="image" src="https://github.com/user-attachments/assets/db8aee40-d866-4d88-af1e-c942b044297a" />|<img width="330" height="424" alt="image" src="https://github.com/user-attachments/assets/039db80e-8a74-40b7-bd8e-c857844749a6" />|
 
 - Modular Double Decker Chasis
 
