@@ -12,7 +12,7 @@ Read our Build-Blog !! Where we document our journey, including our challenges a
 
 ~ Build start date: Monday April 20th, 2026
 
-## Meet the team !!
+## Meet the team !! 🫂
 <div align="center">
 <img width="580" height="400" alt="Team" src="https://github.com/user-attachments/assets/24d6e1cf-8024-42e7-bde4-daf8793d4bc1" />
 </div>
@@ -29,7 +29,7 @@ We also want to thank our team mentor who has been with us from the start, Luis 
 
 
 
-## Robot Overview
+## Robot Overview 🤖 🏎️
 
 Click the preview image below to rotate, zoom, and explore the 3D model for our robot directly in your browser:
 
@@ -44,6 +44,46 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 You can find more pictures in our [v-photos
 ](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/main/v-photos) 📸📸
 
+## Components Used ⚡
+
+| Component | Model | Quantity | Usage |
+|-----------|-----------|-----------|-----------|
+| <img width="200" height="200" alt="LipoRiderPlus" src="https://github.com/user-attachments/assets/d6076567-2f07-48d6-8f42-599e3acb56a0" />| Lipo Rider Plus    | 1 | Power Distribution |
+|<img width="200" height="200" alt="LipoBattery" src="https://github.com/user-attachments/assets/f3547633-941e-4afc-8189-2a754e9a692d" />| Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
+| <img width="200" height="200" alt="ESP32" src="https://github.com/user-attachments/assets/4749645a-bd57-4d26-9eb0-98450272df4a" />| ESP32    | 1 | Motor |
+|<img width="200" height="200" alt="ESP32shield" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| ESP32 Shield    | 1 | Power Distribution |
+| <img width="200" height="200" alt="IMUmpu6050" src="https://github.com/user-attachments/assets/87af0059-332a-42a2-8881-e50abf32aacd" />| IMU mpu6050    | 1 | Orientation and Acceleration |
+|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/2a38df9b-1fc6-4cae-b788-cc98c7928bd1" />| Time of Flight Sensor VL53L0X    | 1 | Front Sensing |
+|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/009884c1-34d4-44d9-a8ec-a5e001456b03" />| Time of Flight Sensor VL53L1X  | 2 | Wall Sensing |
+| <img width="200" height="200" alt="H Bridge DR8833" src="https://github.com/user-attachments/assets/964bc4ab-3846-4f19-8cf4-fb0aab78738e" />| H Bridge DR8833    | 1 | DC Motor Control |
+|<img width="200" height="200" alt="DC Reduction Motor" src="https://github.com/user-attachments/assets/d8146747-21d1-4595-b164-c3306654f4f3" />| DC Reduction Motor    | 1 | Movement |
+| <img width="200" height="200" alt="Steering Servo" src="https://github.com/user-attachments/assets/c66fa4a6-ed05-48e5-9949-b85584c79852" />| Steering Servo    | 1 | Steering Direction Control |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/33122929-928d-4fd0-982b-b70a2e55db85" />| ESP32 S3    | 1 | Camera Module  |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/01845506-fd29-4965-abcb-02d0c9a7cb5c" />| OV3660 3MP 24 Pin     | 1 | Camera |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/21ec1d07-71d3-4683-ad10-65a71d7a351d" />| BAOTER 3296 Buck Converter    | 1 | Voltage Control |
+
+### Key Components 🔍🔍
+- H bridge
+
+| <img width="470" height="470" alt="H_Bridge" src="https://github.com/user-attachments/assets/f5be8ccf-68fd-40e6-a937-e94ae3d800ee" />| We take 5V power form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays high for the straight sections of the route. While when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
+|-----------|-----------|
+
+- ESP Shield
+
+| <img width="500" height="500" alt="ESP32andSHIELD" src="https://github.com/user-attachments/assets/b6c032ef-5b4d-4c1f-bfec-00e8c613832a" />| We connect all of our components to our ESP32 shield so it can directly control them, thanks to this, we are also able to send 5V power to our IMU straight from the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is of great importance. | 
+|-----------|-----------|
+
+- Lipo Rider and Power Supply
+
+| <img width="600" height="600" alt="Lipo" src="https://github.com/user-attachments/assets/af706a99-06d5-4245-9cbd-090e397aaefa" /> | We connect our 3.7V lipo to the Lipo Rider Plus. With this we power many comments, like the ESP Shield, which connects from a 5V USB A to USB C and our H Bridge connects through 5V and GND pins. The battery life lasts an average of 2 hours per use meanwhile recharging takes around half an hour. We are looking into getting a double cell 7.4V battery which also has more than 1500 mAh. | 
+|-----------|-----------|
+
+- Time of Flight Sensors
+
+| <img width="430" height="430" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
+|-----------|-----------|
+
+<img width="1050" height="8" alt="image" src="https://github.com/user-attachments/assets/520cc265-1a65-4e8e-a80e-7458a93457be" />
 
 ## Mechanical Systems
 
@@ -86,48 +126,6 @@ You can find more pictures in our [v-photos
 |<img width="706" height="610" alt="image" src="https://github.com/user-attachments/assets/0cafbdde-0143-4406-82ca-a563f11bba73"/>|<img width="928" height="610" alt="image" src="https://github.com/user-attachments/assets/64a199ca-4e56-4807-9f8c-4ab65864125a" />|
 
 ## Electronic Systems
-
-- Components used
-
-| Component | Model | Quantity | Usage |
-|-----------|-----------|-----------|-----------|
-| <img width="200" height="200" alt="LipoRiderPlus" src="https://github.com/user-attachments/assets/d6076567-2f07-48d6-8f42-599e3acb56a0" />| Lipo Rider Plus    | 1 | Power Distribution |
-|<img width="200" height="200" alt="LipoBattery" src="https://github.com/user-attachments/assets/f3547633-941e-4afc-8189-2a754e9a692d" />| Single Cell 3.7V 1000mAh lipo battery    | 1 | Power Supply for all systems |
-| <img width="200" height="200" alt="ESP32" src="https://github.com/user-attachments/assets/4749645a-bd57-4d26-9eb0-98450272df4a" />| ESP32    | 1 | Motor |
-|<img width="200" height="200" alt="ESP32shield" src="https://github.com/user-attachments/assets/85fe544b-16e0-4709-b146-7d9299dd8e7b" />| ESP32 Shield    | 1 | Power Distribution |
-| <img width="200" height="200" alt="IMUmpu6050" src="https://github.com/user-attachments/assets/87af0059-332a-42a2-8881-e50abf32aacd" />| IMU mpu6050    | 1 | Orientation and Acceleration |
-|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/2a38df9b-1fc6-4cae-b788-cc98c7928bd1" />| Time of Flight Sensor VL53L0X    | 1 | Front Sensing |
-|<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/009884c1-34d4-44d9-a8ec-a5e001456b03" />| Time of Flight Sensor VL53L1X  | 2 | Wall Sensing |
-| <img width="200" height="200" alt="H Bridge DR8833" src="https://github.com/user-attachments/assets/964bc4ab-3846-4f19-8cf4-fb0aab78738e" />| H Bridge DR8833    | 1 | DC Motor Control |
-|<img width="200" height="200" alt="DC Reduction Motor" src="https://github.com/user-attachments/assets/d8146747-21d1-4595-b164-c3306654f4f3" />| DC Reduction Motor    | 1 | Movement |
-| <img width="200" height="200" alt="Steering Servo" src="https://github.com/user-attachments/assets/c66fa4a6-ed05-48e5-9949-b85584c79852" />| Steering Servo    | 1 | Steering Direction Control |
-| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/33122929-928d-4fd0-982b-b70a2e55db85" />| ESP32 S3    | 1 | Camera Module  |
-| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/01845506-fd29-4965-abcb-02d0c9a7cb5c" />| OV3660 3MP 24 Pin     | 1 | Camera |
-| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/21ec1d07-71d3-4683-ad10-65a71d7a351d" />| BAOTER 3296 Buck Converter    | 1 | Voltage Control |
-
-
-- H bridge
-
-| <img width="470" height="470" alt="H_Bridge" src="https://github.com/user-attachments/assets/f5be8ccf-68fd-40e6-a937-e94ae3d800ee" />| We take 5V power form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays high for the straight sections of the route. While when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. | 
-|-----------|-----------|
-
-- ESP Shield
-
-| <img width="500" height="500" alt="ESP32andSHIELD" src="https://github.com/user-attachments/assets/b6c032ef-5b4d-4c1f-bfec-00e8c613832a" />| We connect all of our components to our ESP32 shield so it can directly control them, thanks to this, we are also able to send 5V power to our IMU straight from the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is of great importance. | 
-|-----------|-----------|
-
-- Lipo Rider and Power Supply
-
-| <img width="600" height="600" alt="Lipo" src="https://github.com/user-attachments/assets/af706a99-06d5-4245-9cbd-090e397aaefa" /> | We connect our 3.7V lipo to the Lipo Rider Plus. With this we power many comments, like the ESP Shield, which connects from a 5V USB A to USB C and our H Bridge connects through 5V and GND pins. The battery life lasts an average of 2 hours per use meanwhile recharging takes around half an hour. We are looking into getting a double cell 7.4V battery which also has more than 1500 mAh. | 
-|-----------|-----------|
-
-- Time of Flight Sensors
-
-| <img width="430" height="430" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" />| The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** | 
-|-----------|-----------|
-
-<img width="1050" height="8" alt="image" src="https://github.com/user-attachments/assets/520cc265-1a65-4e8e-a80e-7458a93457be" />
-
 
 
 ## Code and Sensing Logic
