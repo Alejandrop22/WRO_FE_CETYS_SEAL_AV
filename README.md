@@ -44,7 +44,8 @@ S.E.A.L.   Dimensions:  Width 10.5cm x  Lenght 17cm x  Height 12.5cm     Weight:
 You can find more pictures in our [v-photos
 ](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/main/v-photos) 📸📸
 
-## Components Used ⚡
+### Components Used ⚡
+Find a detailed diagram in [schemes](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/main/schemes)
 
 | Component | Model | Quantity | Usage |
 |-----------|-----------|-----------|-----------|
@@ -73,7 +74,7 @@ You can find more pictures in our [v-photos
 <img width="1050" height="8" alt="image" src="https://github.com/user-attachments/assets/520cc265-1a65-4e8e-a80e-7458a93457be" />
 
 ## Mechanical Systems
-
+Find our material list and step by step instructions on how to build our model in [models](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/main/models)
 
 - Diferential Rear Wheel Drive
 
