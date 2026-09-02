@@ -127,20 +127,19 @@ You can find more pictures in our [v-photos
 
 
 ## Code and Sensing Logic
-hola mundo
 Software
-Initialization and Connection Process
-Object Management
-Object Detection
-Wall Detection/Management
-Signal Pillar Detection/Management
-Turning (Open Challenge)
-Turning (Obstacle Challenge)
-Parking Lot Detection/Management
-Three-Point Turn
-Backing Up
-Potential Improvement: Stuck Detection
-Assembly Instructions
+1. Initialization and Connection Process
+2. Object Management
+3. Object Detection
+4. Wall Detection/Management
+5. Signal Pillar Detection/Management
+6. Turning (Open Challenge)
+7. Turning (Obstacle Challenge)
+8. Parking Lot Detection/Management
+9. Three-Point Turn
+10. Backing Up
+11. Potential Improvement: Stuck Detection
+12. Assembly Instructions
 
 (**translation PENDING**)
 
