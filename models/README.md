@@ -1,4 +1,4 @@
-MODELS
+# MODELS
 
-Here you can find our robot 3d models, as well as detailed screenshots from our different subsystems. Our build instructions are compressed inside a zip folder, 
-there you can follow the step-by-step instructions for our build. Clicking on 3d preview will show you a render for our prototype, and clicking on the stl file will let you visualize an interactive preview, but we recommend using the hyperlink on our main README that takes you to a Sketchfab tab.
+Here you can find our robot [3d models](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/models/3d-preview.png), as well as detailed screenshots from our different subsystems. Our build instructions are compressed inside a [zip folder](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/models/BuildInstructions.zip), 
+there you can follow the step-by-step instructions for our build. Clicking on 3d preview will show you a render for our prototype, and clicking on the [stl](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/models/GIRTHBERT.stl) file will let you visualize an interactive preview, but we recommend using the hyperlink on our main [README](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/blob/main/README.md) that takes you to a Sketchfab tab.
