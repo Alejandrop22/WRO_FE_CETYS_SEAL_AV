@@ -128,6 +128,20 @@ You can find more pictures in our [v-photos
 
 ## Code and Sensing Logic
 
+Software
+Initialization and Connection Process
+Object Management
+Object Detection
+Wall Detection/Management
+Signal Pillar Detection/Management
+Turning (Open Challenge)
+Turning (Obstacle Challenge)
+Parking Lot Detection/Management
+Three-Point Turn
+Backing Up
+Potential Improvement: Stuck Detection
+Assembly Instructions
+
 (**translation PENDING**)
 
 When our code starts, a cicle begins the calibtration, in which we read 2000 times our IMU results with the SensorFusion algorithm from xioTecnologies. This way we can save
