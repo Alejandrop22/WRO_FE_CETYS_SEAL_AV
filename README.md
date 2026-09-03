@@ -113,9 +113,6 @@ Find our material list and step by step instructions on how to build our model i
 |:---:|:---:|
 |<img width="706" height="610" alt="image" src="https://github.com/user-attachments/assets/0cafbdde-0143-4406-82ca-a563f11bba73"/>|<img width="928" height="610" alt="image" src="https://github.com/user-attachments/assets/64a199ca-4e56-4807-9f8c-4ab65864125a" />|
 
-## Electronic Systems
-
-
 ## Code and Sensing Logic
 Software
 1. Initialization and Connection Process
@@ -125,13 +122,6 @@ Software
 5. Signal Pillar Detection/Management
 6. Turning (Open Challenge)
 7. Turning (Obstacle Challenge)
-8. Parking Lot Detection/Management
-9. Three-Point Turn
-10. Backing Up
-11. Potential Improvement: Stuck Detection
-12. Assembly Instructions
-
-(**translation PENDING**)
 
 When our code starts, a cicle begins the calibtration, in which we read 2000 times our IMU results with the SensorFusion algorithm from xioTecnologies. This way we can save
 Al iniciar nuestro código empieza un ciclo de calibración donde hace 2000 lecturas de nuestra imu con el algoritmo de SensorFusion de xioTecnologies, de esta manera guardamos la media de diferencia a los 180 grados de las lecturas y lo colocamos como un offset en los 6 ejes, la aceleración en el eje x y y z y la aceleración angular en el eje x y y z.
