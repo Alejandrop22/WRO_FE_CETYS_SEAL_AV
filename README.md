@@ -64,7 +64,6 @@ Find a detailed diagram in [schemes](https://github.com/Alejandrop22/WRO_FE_CETY
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/01845506-fd29-4965-abcb-02d0c9a7cb5c" />| OV3660 3MP 24 Pin     | 1 | Camera |
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/21ec1d07-71d3-4683-ad10-65a71d7a351d" />| BAOTER 3296 Buck Converter    | 1 | Voltage Control |
 
-Electrical budget
 
 ### Electrical Budget ⚡🔋
 
@@ -88,12 +87,12 @@ Electrical budget
 
 ### Connections Diagram
 
-////////////////////////////////// Esquematico ///////////////////////////////
+<img width="1391" height="670" alt="image" src="https://github.com/user-attachments/assets/8e749e71-6df1-47dd-960f-0fa1c4fc3310" />
 
 ### Usage Descriptions 🔍🔍
 |   |    |   | 
 | :--- | :--- | :--- |
-| <img width="470" height="470" alt="H_Bridge" src="https://github.com/user-attachments/assets/f5be8ccf-68fd-40e6-a937-e94ae3d800ee" /> | **H-Bridge** | We take 5V power form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays high for the straight sections of the route. While when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. |
+| <img width="470" height="470" alt="H_Bridge" src="https://github.com/user-attachments/assets/f5be8ccf-68fd-40e6-a937-e94ae3d800ee" /> | **H-Bridge** | We were originally powering our h-bridge directly from the esp32 shield, but realized 5V wasn't enough to move our robot fast enough, that's the reason we included our voltage booster, that helps us feed close to 12V into the h-bridge |
 | <img width="500" height="500" alt="ESP32andSHIELD" src="https://github.com/user-attachments/assets/b6c032ef-5b4d-4c1f-bfec-00e8c613832a" /> | **ESP Shield** | We connect all of our components to our ESP32 shield so it can directly control them, thanks to this, we are also able to send 5V power to our IMU straight from the ESP32. We may change our microcrontroller in the future, but as long as we use the ESP32, the shield is of great importance. |
 | <img width="600" height="600" alt="Lipo" src="https://github.com/user-attachments/assets/af706a99-06d5-4245-9cbd-090e397aaefa" /> | **Lipo Rider and Power Supply** | We connect our 3.7V lipo to the Lipo Rider Plus. With this we power many comments, like the ESP Shield, which connects from a 5V USB A to USB C and our H Bridge connects through 5V and GND pins. The battery life lasts an average of 2 hours per use meanwhile recharging takes around half an hour. We are looking into getting a double cell 7.4V battery which also has more than 1500 mAh. |
 | <img width="430" height="430" alt="TimeofFlightSensors" src="https://github.com/user-attachments/assets/901e0d3f-d5c6-48ce-b904-c7872f85e7d7" /> | **Time of Flight Sensors** | The sensors emit infrared light beams, which helps us read the distance from the robot to the side walls. **When initializing more than 1 sensor, we use the XSHUT pin to asign an id to each one of them, then we add a delay of 100ms between each initialization.** |
@@ -168,7 +167,18 @@ For the obstacle challenge, we brought our second esp32 in (esp32s3 n16r8), whic
 
 /////////////////  VIDEO DEMO PLACEHOLDER  ///////////////////////
 
+## Engineering Decisions Log
+### Why LEGO?
+We focussed on building a reliable robot that was able to be easily replicated by other teams, we thought of using an existing building base that could help us make quick design changes on the fly (since none of us 3 specialized in CAD) and that's how we ended up choosing LEGO. Some of the key advantages we found that came from choosing this were how easily we could change our transmission gear ratios, find the right pieces that allow movement for both axles, and having a rigid robot structure that has no trouble with integrity or balance issues.
+
+<img width="1910" height="1031" alt="image" src="https://github.com/user-attachments/assets/3a23c870-d0f7-49cb-bbba-004f1348c45d" />
 
 
+### Sensor Mounts
+When we first started our open challenge tests, we realized the VL53L0X sensors weren't showing us the right wall separation distance when we got further away from our target. We thought it was because of our sensor's limitations, and based on troubleshooting we did with different colored walls we found out the black color on the barriers were absorving some of our Time of Flight infrarred light. We switched towared the VL53L1X, which have double the range, 2 meters compared to 4 meters, and we got way better results. At last, our final change was adding a sensor mount that levels both of our ToF sensors on each side, we kept the front sensor as a VL53L0X as we only use it to detect close distances. 
+
+<img width="3300" height="1400" alt="VL53L0X vs VL53L1X" src="https://github.com/user-attachments/assets/120d999b-d603-45f3-add6-ecef5bbd17f0" />
+
+### IMU Changes in Wall Following and Turning
 
 
