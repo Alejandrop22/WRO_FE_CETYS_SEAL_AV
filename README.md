@@ -70,8 +70,8 @@ Electrical budget
 
 | Component | Operating Voltage | Typical Current | Peak/Stall Current | Approx. Power (Typ.) |
 |---|:---:|:---:|:---:|:---:|
-| ESP32 (Motor Control) | 5V (via shield) | 140 mA | ~500 mA (WiFi TX) | 0.70 W |
-| ESP32-S3 (Camera Module) | 5V (via USB) | 300 mA | ~500 mA (WiFi + cam) | 1.50 W |
+| ESP32 (Motor Control) | 5V (via shield) | 140 mA | ~500 mA (TX) | 0.70 W |
+| ESP32-S3 (Camera Module) | 5V (via USB) | 300 mA | ~500 mA (cam) | 1.50 W |
 | OV3660 Camera | 3.3V (on-module reg.) | 120 mA | 140 mA | 0.40 W |
 | IMU MPU6050 | 3.3–5V | 4 mA | 4 mA | 0.02 W |
 | VL53L0X (Front ToF) | 3.3–5V (on-module reg.) | 20 mA | 40 mA (ranging) | 0.10 W |
