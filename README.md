@@ -14,7 +14,8 @@ Read our Build-Blog !! Where we document our journey, including our challenges a
 
 ## Meet the team !! 🫂
 <div align="center">
-<img width="580" height="400" alt="Team" src="https://github.com/user-attachments/assets/24d6e1cf-8024-42e7-bde4-daf8793d4bc1" />
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/0e736cc1-87b3-47f1-9623-8f7026765156" />
+
 </div>
 
 | |  |  |
