@@ -84,10 +84,7 @@ Electrical budget
 | Lipo Rider Plus (boost) | 3.7V → 5V | ~85–90% eff. | — | — |
 
 **Notes:**
-- Values are typical datasheet/estimated figures, not measured — recommend validating with an inline multimeter/USB power meter for your final report.
-- "Peak/Stall" column assumes worst case (motor stall, servo stall, WiFi TX burst) — unlikely to occur simultaneously, but useful for battery/regulator sizing.
-- At ~1A typical draw and a 3.7V→5V boost with ~85% efficiency, battery-side current is closer to ~1.3A, which lines up with your observed ~2h runtime on the 1000mAh cell.
-- Consider this a soft argument for the double-cell 7.4V/1500mAh upgrade you mentioned — it would roughly double runtime margin against peak draws.
+- Values are typical datasheet/estimated figures, not measured 
 
 ### Connections Diagram
 
