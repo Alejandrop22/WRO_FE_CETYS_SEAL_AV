@@ -64,7 +64,11 @@ Find a detailed diagram in [schemes](https://github.com/Alejandrop22/WRO_FE_CETY
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/01845506-fd29-4965-abcb-02d0c9a7cb5c" />| OV3660 3MP 24 Pin     | 1 | Camera |
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/21ec1d07-71d3-4683-ad10-65a71d7a351d" />| BAOTER 3296 Buck Converter    | 1 | Voltage Control |
 
-### Key Components 🔍🔍
+### Connections Diagram
+
+////////////////////////////////// Esquematico ///////////////////////////////
+
+### Usage Descriptions 🔍🔍
 |   |    |   | 
 | :--- | :--- | :--- |
 | <img width="470" height="470" alt="H_Bridge" src="https://github.com/user-attachments/assets/f5be8ccf-68fd-40e6-a937-e94ae3d800ee" /> | **H-Bridge** | We take 5V power form our lipo rider, and use to directly power our DC motor. The ESP32 sends a PWM value that stays high for the straight sections of the route. While when we need to turn, we lower the speed to obtain a smoother and tighter turn around the edges. |
