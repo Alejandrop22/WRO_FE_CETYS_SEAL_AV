@@ -64,6 +64,31 @@ Find a detailed diagram in [schemes](https://github.com/Alejandrop22/WRO_FE_CETY
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/01845506-fd29-4965-abcb-02d0c9a7cb5c" />| OV3660 3MP 24 Pin     | 1 | Camera |
 | <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/21ec1d07-71d3-4683-ad10-65a71d7a351d" />| BAOTER 3296 Buck Converter    | 1 | Voltage Control |
 
+Electrical budget
+
+### Electrical Budget ⚡🔋
+
+| Component | Operating Voltage | Typical Current | Peak/Stall Current | Approx. Power (Typ.) |
+|---|:---:|:---:|:---:|:---:|
+| ESP32 (Motor Control) | 5V (via shield) | 140 mA | ~500 mA (WiFi TX) | 0.70 W |
+| ESP32-S3 (Camera Module) | 5V (via USB) | 300 mA | ~500 mA (WiFi + cam) | 1.50 W |
+| OV3660 Camera | 3.3V (on-module reg.) | 120 mA | 140 mA | 0.40 W |
+| IMU MPU6050 | 3.3–5V | 4 mA | 4 mA | 0.02 W |
+| VL53L0X (Front ToF) | 3.3–5V (on-module reg.) | 20 mA | 40 mA (ranging) | 0.10 W |
+| VL53L1X ×2 (Wall ToF) | 3.3–5V (on-module reg.) | 20 mA each (40 mA total) | 40 mA each (80 mA total) | 0.20 W |
+| DRV8833 (H-Bridge logic) | 5V logic | 2 mA | 2 mA | 0.01 W |
+| N20 DC Motor + Gearbox | 5V | 200 mA | ~900 mA (stall) | 1.00 W |
+| 9g Steering Servo | 5V | 150 mA | ~700 mA (stall) | 0.75 W |
+| **Total (typical driving)** | **5V bus** | **~976 mA** | **~2.9 A (worst-case)** | **~4.9 W** |
+| Lipo Battery | 3.7V, 1000 mAh | — | — | 3.7 Wh capacity |
+| Lipo Rider Plus (boost) | 3.7V → 5V | ~85–90% eff. | — | — |
+
+**Notes:**
+- Values are typical datasheet/estimated figures, not measured — recommend validating with an inline multimeter/USB power meter for your final report.
+- "Peak/Stall" column assumes worst case (motor stall, servo stall, WiFi TX burst) — unlikely to occur simultaneously, but useful for battery/regulator sizing.
+- At ~1A typical draw and a 3.7V→5V boost with ~85% efficiency, battery-side current is closer to ~1.3A, which lines up with your observed ~2h runtime on the 1000mAh cell.
+- Consider this a soft argument for the double-cell 7.4V/1500mAh upgrade you mentioned — it would roughly double runtime margin against peak draws.
+
 ### Connections Diagram
 
 ////////////////////////////////// Esquematico ///////////////////////////////
