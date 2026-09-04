@@ -20,8 +20,8 @@ Read our Build-Blog !! Where we document our journey, including our challenges a
 
 | |  |  |
 |-----------|-----------|-----------|
-| Jorge Ibarra  | Yumián Rodríguez    |  Alejandro Pineda   |
-| Studying:  Computer Science Engineering    | Studying: Electronic Cybernetics Engineering    | Studying: Electronic Cybernetics Engineering    |
+| Yumián Rodríguez  | Alejandro Pineda  | Jorge Ibarra   |
+| Studying: Electronic Cybernetics Engineering    | Studying: Electronic Cybernetics Engineering    | Studying:  Computer Science Engineering |
 | Excited to obtain a good placement in the 2026 Future Engineers season.  | Wants to travel to an international championship.  | Ready to work on the prototype day and night. |
 
 We also want to thank our team mentor who has been with us from the start, Luis C. Básaca.
@@ -115,34 +115,32 @@ Find our material list and step by step instructions on how to build our model i
 |<img width="706" height="610" alt="image" src="https://github.com/user-attachments/assets/0cafbdde-0143-4406-82ca-a563f11bba73"/>|<img width="928" height="610" alt="image" src="https://github.com/user-attachments/assets/64a199ca-4e56-4807-9f8c-4ab65864125a" />|
 
 ## Code and Sensing Logic
-Software
-1. Initialization and Connection Process
-2. Object Management
-3. Object Detection
-4. Wall Detection/Management
-5. Signal Pillar Detection/Management
-6. Turning (Open Challenge)
-7. Turning (Obstacle Challenge)
+### Open Challenge
 
-When our code starts, a cicle begins the calibtration, in which we read 2000 times our IMU results with the SensorFusion algorithm from xioTecnologies. This way we can save
-Al iniciar nuestro código empieza un ciclo de calibración donde hace 2000 lecturas de nuestra imu con el algoritmo de SensorFusion de xioTecnologies, de esta manera guardamos la media de diferencia a los 180 grados de las lecturas y lo colocamos como un offset en los 6 ejes, la aceleración en el eje x y y z y la aceleración angular en el eje x y y z.
+Our code implements an efficient autonomous navigation strategy for the Open Challenge, designed to complete the course reliably in 45–60 seconds. It uses a combination of distance sensors (VL53L1X), an IMU-free approach (no gyro, only encoder), and a state machine that alternates between wall-following and precise 90° turns. The robot first detects an opening to determine its turning direction, then hugs the inner wall, performing exactly 12 turns before stopping and blinking an LED. The state machine is optimized to minimize sensor switching and computation, activating only the necessary sensor per segment. 
 
-Después empezamos el movimiento del motor. Este nos causo algunos problemas durante el desarrollo de este robot porque no se pueden generar 2 señales pwm por el mismo canal interno de la esp32, es por eso que cuando queremos mover el motor lo hacemos con "analogWrite" y cuando queremos mover el servo lo hacemos con "ledcWrite" Esta fue nuestra solución y se las recomendamos.  
+#### State Machine
+1. BUSCAR_PARED_INICIAL (Initial Wall Search)
+2. GIRO_DERECHA / GIRO_IZQUIERDA (Right/Left Turn)
+3. SEGUIR_PARED_DERECHA / SEGUIR_PARED_IZQUIERDA (Follow Right/Left Wall)
+4. PARAR_BLINKEAR (Stop and Blink)
 
-El control es la parte más importante de este proyecto; estamos usando un sistema con doble control, cada uno independiente del otro.
+Some considerations we took while troubleshooting were adding brief stops, so that our servo could allign properly before and after each turn, as well as an added distance travel for when we finish our first and last turns, to make sure we park in the section of the field we started in.
 
-El control del servo. Este está dividido en dos, el 50% del error depende de la diferencia del ángulo actual al ángulo target y el otro 50% de la diferencia de la distancia de los sensores de time to flight a la pared, el target es 0 y se mide de la diferencia del doble de una lectura menos la otra, esto hace que el robot se sitúe al 33% de la pared. Esto se hace en la segunda vuelta cuando ya se sabe hacia dónde va a avanzar. Al inicio, se acomoda en la mitad.
+/////////////////  VIDEO DEMO PLACEHOLDER  ///////////////////////
 
-Flujo del PID
+### Obstacle Challenge
 
-<img width="420" height="500" alt="image" src="https://github.com/user-attachments/assets/dc7ae5a2-db3e-4662-b6e9-9c0b4839a278" />
+For the obstacle challenge, we brought our second esp32 in (esp32s3 n16r8), which hold our ov3660 used to detect the color of the obstacles we encounter. Currently, we're still in the troubleshooting phase for this challenge, and are yet to tackle parking at the end of our run. When our esp in front detects a blob larger than the target size either green or red, we send a signal through two gpio pins so that the other esp can control the robot to move towards the desired path.
 
+#### Decision Flow
+1.- Start in the middle lane, and advance forward using Open Challenge logic.
+2.- When obstacle encountered, if it's green, follow wall on left, if it's red, follow wall on right.
+3.- If outside corner encountered (front sensor < threshold & wall following sensor < threshold), perform 90° turn.
+4.- If following wall on any side, and robot detects obstacle that requieres following wall on other side, perform switch.
+5.- Try to keep track of laps as best as possible.
 
-Durante el control del robot tenemos una condición que es girando, entonces si la lectura del sensor de distancia a los lados lee más de 50 centímetros de distancia detecta como una esquina y la condición se convierte en true, y gira hacia el lado de detecte el sensor. El giro se realiza hasta que el ángulo de la lectura de la imu sea igual a +- 90. y se agrega un 1 al contador de giros.
-
-
-La rutina termina cuando el contador de giros es igual a 12.
-
+/////////////////  VIDEO DEMO PLACEHOLDER  ///////////////////////
 
 
 
