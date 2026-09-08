@@ -179,6 +179,5 @@ When we first started our open challenge tests, we realized the VL53L0X sensors 
 
 <img width="3300" height="1400" alt="VL53L0X vs VL53L1X" src="https://github.com/user-attachments/assets/120d999b-d603-45f3-add6-ecef5bbd17f0" />
 
-### IMU Changes in Wall Following and Turning
-
-
+### IMU Changes in Wall Following and Turning with Encoder
+At first, we implemented our pid to take the imu values and mix them with the sensor’s readings, this worked to some extent. Eventually, we brought the encoder into the equation, which proved to be more reliable for straight turns. This made us ditch the imu temporally, and we focused on tuning our pid for wall following instead, which gave us the best results overall. 
