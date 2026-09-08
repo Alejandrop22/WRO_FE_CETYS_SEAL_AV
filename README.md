@@ -10,6 +10,9 @@ We are a team made up of 3 second-year engineering students from Mexicali, Baja 
 
 Read our Build-Blog !! Where we document our journey, including our challenges and how we overcame them.      
 
+[April Branch](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/version-abril-2026)
+[June Branch](https://github.com/Alejandrop22/WRO_FE_CETYS_SEAL_AV/tree/version-junio-2026)
+
 ~ Build start date: Monday April 20th, 2026
 
 ## Meet the team !! 🫂
