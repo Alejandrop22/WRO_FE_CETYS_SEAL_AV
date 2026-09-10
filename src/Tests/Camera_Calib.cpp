@@ -177,8 +177,8 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
       const overlay = ctx.createImageData(w, h);
       const oPix = overlay.data;
 
-      // RECORREMOS SOLO HASTA maxY (IGNORA LO DE ABAJO)
-      for (let y = 0; y < maxY; y += 2) {
+      // RECORREMOS DESDE maxY HACIA ABAJO (IGNORA LO DE ARRIBA DEL LÍMITE)
+      for (let y = maxY; y < h; y += 2) {
         for (let x = 0; x < w; x += 2) {
           const idx = (y * w + x) * 4;
           const hsv = rgbToHsv(pixels[idx], pixels[idx + 1], pixels[idx + 2]);
